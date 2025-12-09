@@ -1,0 +1,8 @@
+/** Shared Prettier config */
+module.exports = {
+  printWidth: 100,
+  semi: true,
+  singleQuote: true,
+  trailingComma: "all",
+  tabWidth: 2
+};

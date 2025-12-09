@@ -1,0 +1,16 @@
+{
+  "extends": "@cynalitx/config/tsconfig.base.json",
+  "compilerOptions": {
+    "module": "Node16",
+    "composite": true,
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "paths": {
+      "@cynalitx/types": ["../types/src"]
+    },
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
+  },
+  "include": ["src"],
+  "references": [{ "path": "../types" }]
+}
