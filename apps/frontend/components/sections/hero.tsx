@@ -46,29 +46,29 @@ export const Hero = () => {
           </div>
         </div>
         <div className="relative md:flex-1">
-          <div className="absolute inset-0 rounded-3xl bg-grid-mesh opacity-80 blur-0" />
-          <div className="relative space-y-4 rounded-3xl border border-border bg-card/80 p-6 shadow-glow">
+          <div className="gradient-governance absolute inset-0 rounded-3xl opacity-90 blur-0" />
+          <div className="relative space-y-4 rounded-3xl border border-border/60 bg-card/90 p-6 shadow-glow">
             <div className="flex items-center justify-between text-sm text-muted-foreground">
               <span>Unified Governance Graph</span>
               <span className="rounded-full bg-primary/15 px-3 py-1 text-xs text-primary">
                 Live
               </span>
             </div>
-            <div className="rounded-2xl border border-border bg-background p-4 shadow-inner">
+            <div className="rounded-2xl border border-border/70 bg-background p-4 shadow-inner">
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span>Controls mapped</span>
                 <span>AI Explainability</span>
               </div>
               <div className="mt-4 grid grid-cols-3 gap-3 text-center text-sm text-foreground">
-                <div className="rounded-xl border border-border bg-muted/20 p-3">
+                <div className="rounded-xl border border-border/60 bg-muted/30 p-3">
                   <p className="text-lg font-semibold">ISO 27001</p>
                   <p className="text-xs text-muted-foreground">92% coverage</p>
                 </div>
-                <div className="rounded-xl border border-border bg-muted/20 p-3">
+                <div className="rounded-xl border border-border/60 bg-muted/30 p-3">
                   <p className="text-lg font-semibold">SOC2</p>
                   <p className="text-xs text-muted-foreground">Audit-ready</p>
                 </div>
-                <div className="rounded-xl border border-border bg-muted/20 p-3">
+                <div className="rounded-xl border border-border/60 bg-muted/30 p-3">
                   <p className="text-lg font-semibold">EU AI Act</p>
                   <p className="text-xs text-muted-foreground">Proactive mapping</p>
                 </div>
@@ -80,7 +80,7 @@ export const Hero = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3 rounded-2xl border border-border bg-muted/20 p-3 text-sm text-muted-foreground">
+            <div className="flex items-center gap-3 rounded-2xl border border-border/70 bg-muted/30 p-3 text-sm text-muted-foreground">
               <ShieldCheck className="h-5 w-5 text-primary" />
               <div>
                 <p className="text-foreground">Enterprise-grade encryption, zero-trust design</p>
