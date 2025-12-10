@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProviderWrapper } from "./providers/theme-provider";
+import { Card } from "@/components/ui/card";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
-        <ThemeProviderWrapper>{children}</ThemeProviderWrapper>
+        <ThemeProviderWrapper>
+          <Card className="min-h-screen gap-0 rounded-none border-0 bg-[var(--background)] p-0 shadow-none text-[var(--foreground)]">
+            {children}
+          </Card>
+        </ThemeProviderWrapper>
       </body>
     </html>
   );

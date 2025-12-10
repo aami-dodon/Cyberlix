@@ -3,6 +3,15 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Sparkles, BookOpen, Terminal, Zap, Moon, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 
 const highlights = [
   {
@@ -45,23 +54,25 @@ function ThemeToggle() {
   const targetTheme = isDark ? "light" : "dark";
 
   return (
-    <button
+    <Button
       type="button"
+      variant="outline"
+      size="sm"
       onClick={() => setTheme(targetTheme)}
       aria-label="Toggle color theme"
-    className="inline-flex items-center gap-2 rounded-full border border-[var(--sidebar-border)] bg-[var(--sidebar)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--sidebar-foreground)] transition hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-foreground)] dark:hover:text-[var(--sidebar-primary-foreground)]"
+      className="inline-flex items-center gap-2 rounded-full border-[var(--sidebar-border)] bg-[var(--sidebar)] px-3 py-2 text-[var(--sidebar-foreground)] text-xs font-semibold uppercase tracking-[0.3em] transition hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-foreground)] dark:hover:text-[var(--sidebar-primary-foreground)]"
     >
       <ButtonIcon size={16} />
       {isDark ? "Light" : "Dark"}
-    </button>
+    </Button>
   );
 }
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col justify-center bg-[var(--background)] px-6 py-12 text-[var(--foreground)]">
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-10 rounded-3xl border border-[var(--border)] bg-[var(--card)] p-10 shadow-[0_30px_80px_rgba(0,0,0,0.25)]">
-        <header className="flex flex-col gap-4">
+      <Card className="mx-auto flex w-full max-w-5xl flex-col gap-10 rounded-[36px] border-[var(--border)] bg-[var(--card)] p-10 text-[var(--foreground)] shadow-[0_30px_80px_rgba(0,0,0,0.25)]">
+        <CardHeader className="flex flex-col gap-4 px-0">
           <div className="flex items-start justify-between gap-4">
             <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
               <Sparkles size={18} />
@@ -69,9 +80,7 @@ export default function Home() {
             </p>
             <ThemeToggle />
           </div>
-          <h1 className="text-4xl font-semibold">
-            Tailwind Typography + shared tokens
-          </h1>
+          <CardTitle className="text-4xl font-semibold">Tailwind Typography + shared tokens</CardTitle>
           <p className="text-lg text-[var(--muted-foreground)]">
             Everything on this page references the CSS custom properties from{" "}
             <code className="rounded bg-[var(--sidebar)] px-1 py-0.5 text-xs font-semibold uppercase tracking-tight text-[var(--sidebar-foreground)]">
@@ -79,45 +88,49 @@ export default function Home() {
             </code>
             .
           </p>
-        </header>
+        </CardHeader>
 
-        <section className="grid gap-6 md:grid-cols-3">
+        <CardContent className="grid gap-6 px-0 md:grid-cols-3">
           {highlights.map((item) => (
-            <article
+            <Card
               key={item.name}
-              className="flex flex-col gap-3 rounded-2xl border border-[var(--sidebar-border)] bg-[var(--sidebar)]/40 p-5"
+              className="gap-3 rounded-2xl border-[var(--sidebar-border)] bg-[var(--sidebar)]/40 p-5 text-[var(--sidebar-foreground)]"
             >
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--sidebar-accent)] text-[var(--sidebar-foreground)]">
                 <item.icon size={20} />
               </div>
-              <h2 className="text-lg font-semibold">{item.name}</h2>
-              <p className="text-sm text-[var(--sidebar-foreground)]">{item.description}</p>
-            </article>
+              <CardTitle className="text-lg font-semibold text-[var(--foreground)]">{item.name}</CardTitle>
+              <CardDescription className="text-sm text-[var(--sidebar-foreground)]">
+                {item.description}
+              </CardDescription>
+            </Card>
           ))}
-        </section>
+        </CardContent>
 
-        <article className="prose max-w-none text-[var(--foreground)] prose-invert">
-          <h3 className="text-2xl font-semibold">Typography-first content</h3>
-          <p>
-            Leveraging Tailwind Typography means every heading, paragraph, list, and link receives sensible spacing.
-            This keeps multi-column sections and callouts readable regardless of screen size.
-          </p>
-          <ul>
-            {stack.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <p>
-            Since the colors, radius, and spacing tokens live in one place, switching to a different theme only
-            requires updating <code>globals.css</code>.
-          </p>
-        </article>
+        <CardContent className="px-0">
+          <article className="prose max-w-none text-[var(--foreground)] prose-invert">
+            <h3 className="text-2xl font-semibold">Typography-first content</h3>
+            <p>
+              Leveraging Tailwind Typography means every heading, paragraph, list, and link receives sensible spacing.
+              This keeps multi-column sections and callouts readable regardless of screen size.
+            </p>
+            <ul>
+              {stack.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p>
+              Since the colors, radius, and spacing tokens live in one place, switching to a different theme only
+              requires updating <code>globals.css</code>.
+            </p>
+          </article>
+        </CardContent>
 
-        <footer className="flex flex-wrap items-center gap-3 text-sm text-[var(--muted-foreground)]">
+        <CardFooter className="flex flex-wrap items-center gap-3 px-0 text-sm text-[var(--muted-foreground)]">
           <Terminal size={16} />
           <span>Built with shared tokens and Lucide icons.</span>
-        </footer>
-      </main>
+        </CardFooter>
+      </Card>
     </div>
   );
 }
