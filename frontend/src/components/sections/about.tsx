@@ -3,7 +3,11 @@ export function AboutSection() {
   return (
     <section id="about" className="relative overflow-hidden bg-[var(--background)] py-24 h-screen flex items-center">
       {/* Background Decor */}
-      <div className="absolute left-0 bottom-0 h-96 w-96 translate-y-1/2 -translate-x-1/4 bg-[var(--primary)]/10 blur-[120px] rounded-full" />
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 right-0 h-96 w-96 translate-x-1/3 bg-[var(--secondary)]/20 blur-[100px] rounded-full" />
+        <div className="absolute bottom-0 left-0 h-96 w-96 translate-y-1/3 -translate-x-1/4 bg-[var(--primary)]/20 blur-[100px] rounded-full" />
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
+      </div>
 
       <div className="layout-container relative z-10 grid gap-12 md:grid-cols-2 items-center">
         <FadeInSection className="space-y-6">

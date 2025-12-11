@@ -36,10 +36,13 @@ const MainNav = React.memo(function MainNav() {
       <NavigationMenuList className="flex gap-1">
         {navItems.map((item) => (
           <NavigationMenuItem key={item.name}>
-            <NavigationMenuLink asChild>
+            <NavigationMenuLink
+              asChild
+              className="!bg-transparent !hover:bg-transparent !hover:text-[var(--primary)] focus:bg-transparent focus:text-[var(--primary)] data-[active]:bg-transparent data-[active]:text-[var(--primary)]"
+            >
               <Link
                 href={item.href}
-                className="relative group inline-flex h-8 items-center justify-center px-4 text-sm font-medium text-[var(--foreground)] transition-all hover:bg-transparent hover:text-[var(--primary)] hover:scale-105 focus:bg-transparent focus:text-[var(--primary)] focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                className="relative group inline-flex h-8 items-center justify-center px-4 text-sm font-medium text-[var(--foreground)] transition-all hover:scale-105 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               >
                 {item.name}
               </Link>
@@ -47,7 +50,7 @@ const MainNav = React.memo(function MainNav() {
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>
-    </NavigationMenu>
+    </NavigationMenu >
   );
 });
 
@@ -90,10 +93,11 @@ function MobileMenu() {
               <ThemeToggle />
             </div>
             <Button
+              asChild
               className="w-full rounded-full font-semibold shadow-[0_0_15px_-3px_var(--primary)] hover:shadow-[0_0_20px_-3px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
               size="default"
             >
-              DEMO
+              <Link href="/coming-soon">DEMO</Link>
             </Button>
           </div>
         </SheetFooter>
@@ -152,10 +156,11 @@ export function Header() {
           <div className="hidden md:flex items-center gap-2">
             <ThemeToggle />
             <Button
+              asChild
               className="rounded-full font-semibold shadow-[0_0_15px_-3px_var(--primary)] hover:shadow-[0_0_20px_-3px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
               size="default"
             >
-              DEMO
+              <Link href="/coming-soon">DEMO</Link>
             </Button>
           </div>
           <MobileMenu />

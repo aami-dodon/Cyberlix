@@ -43,7 +43,7 @@ export function ContactSection() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-[var(--muted-foreground)] uppercase tracking-wider">Email Us</p>
-                  <a href={`mailto:${supportEmail}`} className="text-base font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors truncate block">
+                  <a href={`mailto:${supportEmail}`} className="text-base font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors break-words block">
                     {supportEmail}
                   </a>
                 </div>
@@ -55,7 +55,7 @@ export function ContactSection() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-[var(--muted-foreground)] uppercase tracking-wider">Call Us</p>
-                  <a href={`tel:${supportPhoneHref}`} className="text-base font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors truncate block">
+                  <a href={`tel:${supportPhoneHref}`} className="text-base font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors break-words block">
                     {supportPhone}
                   </a>
                 </div>

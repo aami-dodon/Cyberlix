@@ -9,7 +9,11 @@ export function ServicesSection() {
   return (
     <section id="services" className="relative bg-[var(--background)] py-24 h-screen flex flex-col justify-center overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute right-0 top-1/4 h-1/2 w-1/3 bg-[var(--primary)]/5 blur-[120px]" />
+      <div className="absolute inset-0 z-0">
+        <div className="absolute -top-20 -left-20 h-96 w-96 bg-[var(--primary)]/20 blur-[100px] rounded-full" />
+        <div className="absolute top-1/2 right-0 h-96 w-96 translate-x-1/2 bg-[var(--secondary)]/20 blur-[100px] rounded-full" />
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
+      </div>
 
       <div className="layout-container relative z-10">
         <FadeInSection>

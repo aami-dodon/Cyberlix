@@ -47,7 +47,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
                             <div className="flex gap-4">
                                 <Button size="lg" className="text-base" asChild>
-                                    <Link href="/contact">Book a Consultation</Link>
+                                    <Link href="/#contact">Book a Consultation</Link>
                                 </Button>
                             </div>
                         </div>
