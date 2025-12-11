@@ -1,8 +1,17 @@
 "use client";
 
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { sessionState } from "@/lib/session-store";
 
 export function HeroSection() {
+  const shouldAnimate = !sessionState.hasVisitedHome;
+
+  useEffect(() => {
+    sessionState.hasVisitedHome = true;
+  }, []);
+
   return (
     <article className="relative overflow-hidden bg-background text-foreground h-screen flex items-center">
       {/* Background Effects */}
@@ -14,20 +23,40 @@ export function HeroSection() {
 
       <div className="layout-container relative z-10 space-y-8 py-24">
         <div className="max-w-4xl space-y-6">
-          <p className="inline-block text-sm font-bold uppercase tracking-[0.2em] text-primary animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <p
+            className={cn(
+              "inline-block text-sm font-bold uppercase tracking-[0.2em] text-primary",
+              shouldAnimate && "animate-in fade-in slide-in-from-bottom-4 duration-700"
+            )}
+          >
             Enterprise Cybersecurity Leadership
           </p>
 
-          <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+          <h1
+            className={cn(
+              "text-[clamp(3rem,6vw,5.5rem)] font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary drop-shadow-sm",
+              shouldAnimate && "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100"
+            )}
+          >
             We Secure Your Cyber Presence
           </h1>
 
-          <p className="max-w-2xl text-lg md:text-xl leading-relaxed text-muted-foreground animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+          <p
+            className={cn(
+              "max-w-2xl text-lg md:text-xl leading-relaxed text-muted-foreground",
+              shouldAnimate && "animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200"
+            )}
+          >
             Cynalitx provides end-to-end cybersecurity solutions — from strategy and governance to 24×7 threat
             monitoring, cloud security, data protection, and compliance.
           </p>
 
-          <div className="pt-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
+          <div
+            className={cn(
+              "pt-4",
+              shouldAnimate && "animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300"
+            )}
+          >
             <Button
               asChild
               variant="glow"

@@ -56,7 +56,7 @@ export function Footer() {
         </div>
 
         {/* Column 2: Newsletter */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 pr-8">
           <div className="space-y-1">
             <p className="text-sm font-semibold text-foreground">Newsletter</p>
             <p className="text-xs text-muted-foreground">
