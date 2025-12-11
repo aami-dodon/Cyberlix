@@ -14,12 +14,12 @@ const reasons = [
 
 export function WhyUsSection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--background)] py-20">
+    <section className="relative overflow-hidden bg-[var(--background)] py-24">
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[var(--primary)]/5 to-transparent" />
 
       <div className="layout-container relative z-10 grid gap-12 md:grid-cols-2 items-center">
         <div className="space-y-6">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--secondary)]">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">
             Why Cynalitx
           </p>
           <h2 className="text-3xl md:text-4xl font-bold leading-tight text-[var(--foreground)]">

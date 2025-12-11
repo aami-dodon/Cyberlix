@@ -29,10 +29,10 @@ const leaders = [
 
 export function LeadershipSection() {
   return (
-    <section className="relative bg-[var(--background)] py-20">
+    <section className="relative bg-[var(--background)] py-24">
       <div className="layout-container space-y-12">
         <div className="text-center space-y-4">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--secondary)]">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">
             Leadership
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)]">

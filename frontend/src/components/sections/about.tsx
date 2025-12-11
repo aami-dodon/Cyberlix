@@ -1,16 +1,16 @@
 export function AboutSection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--background)] py-20">
+    <section className="relative overflow-hidden bg-[var(--background)] py-24 min-h-[80vh] flex items-center">
       {/* Background Decor */}
       <div className="absolute left-0 bottom-0 h-96 w-96 translate-y-1/2 -translate-x-1/4 bg-[var(--primary)]/10 blur-[120px] rounded-full" />
 
       <div className="layout-container relative z-10 grid gap-12 md:grid-cols-2 items-center">
         <div className="space-y-6">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--secondary)]">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">
             About Cynalitx
           </p>
           <h2 className="text-3xl md:text-5xl font-bold leading-tight text-[var(--foreground)]">
-            Full-spectrum <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]">security leadership</span>
+            Full-spectrum <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[var(--primary)]">security leadership</span>
           </h2>
         </div>
 

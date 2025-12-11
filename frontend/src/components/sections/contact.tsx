@@ -17,7 +17,7 @@ export function ContactSection() {
           {/* Text Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--secondary)]">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">
                 Get in Touch
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] leading-tight">
@@ -108,7 +108,7 @@ export function ContactSection() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button
-                  className="flex-1 h-12 text-base font-semibold shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90"
+                  className="flex-1 h-12 px-8 text-base font-semibold shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
                   variant="default"
                   size="lg"
                 >
