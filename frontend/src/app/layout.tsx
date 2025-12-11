@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Cynalitx",
     images: [
       {
-        url: "https://cynalitx.com/og-image.png",
+        url: "https://cynalitx.dodon.in/og-image.png",
         width: 1200,
         height: 630,
         alt: "Cynalitx logo and modern healthcare interface",
