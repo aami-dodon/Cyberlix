@@ -1,6 +1,6 @@
 export function AboutSection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--background)] py-24 h-screen snap-start flex items-center">
+    <section id="about" className="relative overflow-hidden bg-[var(--background)] py-24 h-screen snap-start flex items-center">
       {/* Background Decor */}
       <div className="absolute left-0 bottom-0 h-96 w-96 translate-y-1/2 -translate-x-1/4 bg-[var(--primary)]/10 blur-[120px] rounded-full" />
 

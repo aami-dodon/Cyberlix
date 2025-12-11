@@ -22,11 +22,11 @@ import {
 } from "@/components/ui/sheet";
 
 const navItems = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "#" },
-  { name: "Why Cynalitx", href: "#" },
-  { name: "Leadership", href: "#" },
-  { name: "Resources", href: "#" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Why Cynalitx", href: "#why-cynalitx" },
+  { name: "Leadership", href: "#leadership" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const MainNav = React.memo(function MainNav() {
@@ -37,7 +37,7 @@ const MainNav = React.memo(function MainNav() {
           <NavigationMenuItem key={item.name}>
             <NavigationMenuLink
               href={item.href}
-              className="group inline-flex h-8 items-center justify-center rounded-full px-4 text-sm font-medium transition-colors hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] focus:bg-[var(--accent)] focus:text-[var(--accent-foreground)] focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              className="relative group inline-flex h-8 items-center justify-center px-4 text-sm font-medium text-[var(--foreground)] transition-colors hover:text-[var(--primary)] focus:text-[var(--primary)] focus:outline-none disabled:pointer-events-none disabled:opacity-50 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[var(--primary)] after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
             >
               {item.name}
             </NavigationMenuLink>

@@ -37,7 +37,7 @@ const leaders = [
 
 export function LeadershipSection() {
   return (
-    <section className="relative bg-[var(--background)] py-24 h-screen snap-start flex flex-col justify-center">
+    <section id="leadership" className="relative bg-[var(--background)] py-24 h-screen snap-start flex flex-col justify-center">
       <div className="layout-container space-y-12">
         <div className="text-center space-y-4">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">
