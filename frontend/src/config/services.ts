@@ -1,0 +1,128 @@
+import { Shield, BarChart3, Cloud, Lock, Scale, MonitorPlay, Scan, Users } from "lucide-react";
+
+export const servicesData = [
+    {
+        id: "vciso",
+        title: "vCISO & Information Security Leadership",
+        slug: "vciso-information-security-leadership",
+        description: "Gain access to senior cybersecurity leadership without hiring full-time. Our vCISO service delivers security governance, regulatory guidance, and strategic risk insights.",
+        icon: Shield,
+        details: [
+            "Executive and Board presentations on security",
+            "Security Governance, risk and compliance",
+            "Regulatory Advisory Services",
+            "Cybersecurity Tools & Implementation Support",
+            "Periodic review and updates of security practices",
+            "Strategic Reporting for stakeholder insights"
+        ]
+    },
+    {
+        id: "maturity-assessment",
+        title: "Cyber Security Maturity Assessment",
+        slug: "cyber-security-maturity-assessment",
+        description: "Understand your organization’s current cybersecurity posture and build a structured roadmap for improvement against global standards.",
+        icon: BarChart3,
+        details: [
+            "Assess current posture against standards",
+            "Identify gaps and areas for improvements",
+            "Develop 2-3 year maturity improvement roadmap",
+            "Assist in roadmap implementation",
+            "Continuous Assessment to ensure improvements"
+        ]
+    },
+    {
+        id: "cloud-security",
+        title: "Cloud Security",
+        slug: "cloud-security",
+        description: "Strengthen and optimize cloud environments across AWS, Azure, GCP, and hybrid setups with configuration reviews and access controls.",
+        icon: Cloud,
+        details: [
+            "Cloud configuration review",
+            "Roadmap to manage cloud security risks",
+            "Cloud Access Control",
+            "Data Encryption Standards",
+            "Compliance with Cloud Standards",
+            "Continuous Cloud Monitoring"
+        ]
+    },
+    {
+        id: "data-security",
+        title: "Data Security",
+        slug: "data-security",
+        description: "Protect your critical assets with data loss prevention, access management, and robust encryption policies.",
+        icon: Lock,
+        details: [
+            "Data classification and flow diagrams",
+            "Identify controls to secure company's assets",
+            "Data Loss Prevention (DLP) to prevent unauthorized data transfers",
+            "Access Management solutions",
+            "Data Encryption Policies",
+            "Email and Internet Security"
+        ]
+    },
+    {
+        id: "grc",
+        title: "Governance Risk and Compliance (GRC)",
+        slug: "governance-risk-compliance",
+        description: "Comprehensive risk management and compliance services including ISO certification consulting and regulatory guidance.",
+        icon: Scale,
+        details: [
+            "Risk management - Assess, accept, transfer, remediate",
+            "ISO certification consulting",
+            "Guidance for SOC 1&2 attestation and audits",
+            "Compliance review with industry standards (ISO, NIST, PCI DSS, GDPR)",
+            "Cyber Security governance frameworks",
+            "Supply Chain and Third Party Risk Assessments",
+            "Tailored Awareness Programs and Simulations"
+        ]
+    },
+    {
+        id: "soc",
+        title: "Managed Security Operations Center (SOC)",
+        slug: "managed-soc",
+        description: "A 24×7 next-generation SOC combining AI, ML, and advanced analytics to detect, analyze, and respond to cybersecurity threats in real time.",
+        icon: MonitorPlay,
+        details: [
+            "Next gen Security Operations Center",
+            "ML and AI on Big/Fast data architecture",
+            "Unified threat detection and remediation",
+            "Incident and Crisis Response",
+            "Integrated solution for compliance and use cases",
+            "Flexible billing by devices, not EPS",
+            "24x7x365 SLA for best-in-class service"
+        ]
+    },
+    {
+        id: "vapt",
+        title: "Vulnerability Assessment (VAPT)",
+        slug: "vulnerability-assessment-penetration-testing",
+        description: "Identify and remediate vulnerabilities with expert penetration testing, red team assessments, and breach simulations.",
+        icon: Scan,
+        details: [
+            "Cert-in empaneled experts",
+            "On demand vulnerability scanning",
+            "Remediation guidance for vulnerabilities",
+            "End to end management of vulnerability management programs",
+            "Red Team Assessments",
+            "Breach and Attack Simulations",
+            "Compliance-Driven Testing services",
+            "Mobile App, API, AI, CI/CD Assessments",
+            "Actionable insights for security defenses"
+        ]
+    },
+    {
+        id: "cyber-warriors",
+        title: "Cyber Warriors on Premises",
+        slug: "cyber-warriors-on-premises",
+        description: "Augment your team with trained cybersecurity experts for on-site support, threat monitoring, and specialized solutions.",
+        icon: Users,
+        details: [
+            "Trained cyber security resources to augment teams",
+            "Broad spectrum of services with multiple skill sets",
+            "On demand On-Site Support",
+            "Threat Monitoring & Dark Web Monitoring Experts",
+            "Customized cybersecurity solutions",
+            "Skill Enhancement Programs for team development"
+        ]
+    }
+];

@@ -1,35 +1,9 @@
 "use client";
 
-import { Shield, BarChart3, Cloud, MonitorPlay, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeInSection } from "@/components/ui/fade-in-section";
-
-const services = [
-  {
-    title: "vCISO & Information Security Leadership",
-    description:
-      "Gain access to senior cybersecurity leadership without hiring full-time. Our vCISO service delivers security governance, regulatory guidance, and strategic risk insights.",
-    icon: Shield,
-  },
-  {
-    title: "Cyber Security Maturity Assessment",
-    description:
-      "Understand your organization’s current cybersecurity posture and build a structured roadmap for improvement against global standards.",
-    icon: BarChart3,
-  },
-  {
-    title: "Cloud Security",
-    description:
-      "Strengthen and optimize cloud environments across AWS, Azure, GCP, and hybrid setups with configuration reviews and access controls.",
-    icon: Cloud,
-  },
-  {
-    title: "Managed Security Operations Center (SOC)",
-    description:
-      "A 24×7 next-generation SOC combining AI, ML, and advanced analytics to detect, analyze, and respond to cybersecurity threats in real time.",
-    icon: MonitorPlay,
-  },
-];
+import { servicesData } from "@/config/services";
 
 export function ServicesSection() {
   return (
@@ -56,7 +30,7 @@ export function ServicesSection() {
 
         <FadeInSection delay={200}>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 mb-10">
-            {services.map((service) => (
+            {servicesData.slice(0, 4).map((service) => (
               <article
                 key={service.title}
                 className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)]/50 p-6 transition-all duration-300 hover:border-[var(--primary)]/50 hover:bg-[var(--card)] hover:shadow-lg hover:-translate-y-1 flex flex-col"
@@ -74,9 +48,9 @@ export function ServicesSection() {
                     {service.description}
                   </p>
 
-                  <div className="flex items-center text-sm font-semibold text-[var(--primary)] group-hover:translate-x-1 transition-transform cursor-pointer mt-auto">
+                  <a href={`/services/${service.slug}`} className="flex items-center text-sm font-semibold text-[var(--primary)] group-hover:translate-x-1 transition-transform cursor-pointer mt-auto">
                     Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                  </div>
+                  </a>
                 </div>
               </article>
             ))}
