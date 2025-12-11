@@ -37,7 +37,7 @@ const MainNav = React.memo(function MainNav() {
           <NavigationMenuItem key={item.name}>
             <NavigationMenuLink
               href={item.href}
-              className="relative group inline-flex h-8 items-center justify-center px-4 text-sm font-medium text-[var(--foreground)] transition-colors hover:text-[var(--primary)] focus:text-[var(--primary)] focus:outline-none disabled:pointer-events-none disabled:opacity-50 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[var(--primary)] after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+              className="relative group inline-flex h-8 items-center justify-center px-4 text-sm font-medium text-[var(--foreground)] transition-all hover:bg-transparent hover:text-[var(--primary)] hover:scale-105 focus:bg-transparent focus:text-[var(--primary)] focus:outline-none disabled:pointer-events-none disabled:opacity-50"
             >
               {item.name}
             </NavigationMenuLink>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
+import { FadeInSection } from "@/components/ui/fade-in-section";
 
 const reasons = [
   "Led by industry veterans with decades of cybersecurity leadership experience",
@@ -14,11 +15,11 @@ const reasons = [
 
 export function WhyUsSection() {
   return (
-    <section id="why-cynalitx" className="relative overflow-hidden bg-[var(--background)] py-24 h-screen snap-start flex flex-col justify-center">
+    <section id="why-cynalitx" className="relative overflow-hidden bg-[var(--background)] py-24 h-screen flex flex-col justify-center">
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[var(--primary)]/5 to-transparent" />
 
       <div className="layout-container relative z-10 grid gap-12 md:grid-cols-2 items-center">
-        <div className="space-y-6">
+        <FadeInSection className="space-y-6">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">
             Why Cynalitx
           </p>
@@ -28,20 +29,22 @@ export function WhyUsSection() {
           <p className="text-lg text-[var(--muted-foreground)]">
             We don't just secure your data; we empower your business to grow with confidence.
           </p>
-        </div>
+        </FadeInSection>
 
-        <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-8 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)] backdrop-blur-sm">
-          <ul className="space-y-4">
-            {reasons.map((reason) => (
-              <li key={reason} className="flex items-start gap-4">
-                <div className="mt-1 flex-shrink-0 rounded-full bg-[var(--primary)]/20 p-1 text-[var(--primary)]">
-                  <Check className="h-4 w-4" strokeWidth={3} />
-                </div>
-                <span className="text-base text-[var(--card-foreground)]">{reason}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <FadeInSection delay={200}>
+          <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-8 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+            <ul className="space-y-4">
+              {reasons.map((reason) => (
+                <li key={reason} className="flex items-start gap-4">
+                  <div className="mt-1 flex-shrink-0 rounded-full bg-[var(--primary)]/20 p-1 text-[var(--primary)]">
+                    <Check className="h-4 w-4" strokeWidth={3} />
+                  </div>
+                  <span className="text-base text-[var(--card-foreground)]">{reason}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </FadeInSection>
       </div>
     </section>
   );

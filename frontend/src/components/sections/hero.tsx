@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <article className="relative overflow-hidden bg-[var(--background)] text-[var(--foreground)] h-screen snap-start flex items-center">
+    <article className="relative overflow-hidden bg-[var(--background)] text-[var(--foreground)] h-screen flex items-center">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[var(--primary)]/20 blur-[100px]" />

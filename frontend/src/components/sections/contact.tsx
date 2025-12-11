@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone } from "lucide-react";
+import { FadeInSection } from "@/components/ui/fade-in-section";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative py-24 bg-[var(--background)] overflow-hidden h-screen snap-start flex flex-col justify-center">
+    <section id="contact" className="relative py-24 bg-[var(--background)] overflow-hidden h-screen flex flex-col justify-center">
       {/* Background Blob */}
       <div className="absolute right-0 bottom-0 h-[500px] w-[500px] translate-y-1/2 translate-x-1/4 bg-[var(--secondary)]/10 blur-[120px] rounded-full" />
 
@@ -15,7 +16,7 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-16">
 
           {/* Text Content */}
-          <div className="space-y-8">
+          <FadeInSection className="space-y-8">
             <div className="space-y-4">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">
                 Get in Touch
@@ -54,66 +55,68 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeInSection>
 
           {/* Form */}
-          <div className="bg-[var(--card)] p-8 md:p-10 rounded-3xl border border-[var(--border)] shadow-2xl shadow-black/20 backdrop-blur-xl flex flex-col h-full justify-end">
-            <form className="flex flex-col gap-6">
-              <div className="grid gap-6 md:grid-cols-2">
-                <div className="space-y-2">
-                  <Input
-                    placeholder="Name"
-                    aria-label="Name"
-                    className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
-                  />
+          <FadeInSection delay={200} className="flex flex-col h-full justify-end">
+            <div className="bg-[var(--card)] p-8 md:p-10 rounded-3xl border border-[var(--border)] shadow-2xl shadow-black/20 backdrop-blur-xl">
+              <form className="flex flex-col gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <Input
+                      placeholder="Name"
+                      aria-label="Name"
+                      className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Input
+                      placeholder="Company"
+                      aria-label="Company"
+                      className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
+                    />
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <Input
-                    placeholder="Company"
-                    aria-label="Company"
-                    className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
-                  />
-                </div>
-              </div>
 
-              <div className="grid gap-6 md:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <Input
+                      placeholder="Email"
+                      type="email"
+                      aria-label="Email"
+                      className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Input
+                      placeholder="Phone"
+                      type="tel"
+                      aria-label="Phone"
+                      className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
+                    />
+                  </div>
+                </div>
+
                 <div className="space-y-2">
-                  <Input
-                    placeholder="Email"
-                    type="email"
-                    aria-label="Email"
-                    className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
+                  <Textarea
+                    placeholder="Tell us about your security needs..."
+                    aria-label="Message"
+                    className="min-h-[150px] bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50 resize-none p-4"
                   />
                 </div>
-                <div className="space-y-2">
-                  <Input
-                    placeholder="Phone"
-                    type="tel"
-                    aria-label="Phone"
-                    className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
-                  />
+
+                <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                  <Button
+                    className="w-full h-12 px-8 text-base font-semibold shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
+                    variant="default"
+                    size="lg"
+                  >
+                    Request Consultation
+                  </Button>
                 </div>
-              </div>
-
-              <div className="space-y-2">
-                <Textarea
-                  placeholder="Tell us about your security needs..."
-                  aria-label="Message"
-                  className="min-h-[150px] bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50 resize-none p-4"
-                />
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Button
-                  className="w-full h-12 px-8 text-base font-semibold shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
-                  variant="default"
-                  size="lg"
-                >
-                  Request Consultation
-                </Button>
-              </div>
-            </form>
-          </div>
+              </form>
+            </div>
+          </FadeInSection>
 
         </div>
       </div>

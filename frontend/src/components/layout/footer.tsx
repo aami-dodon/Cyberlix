@@ -1,60 +1,87 @@
-
-const quickLinks = ["Overview", "Case Studies", "Careers", "Blog"];
-const services = ["Cloud Ops", "Data Science", "Security", "Product Engineering"];
-const resources = ["Guides", "Events", "Support", "Contact"];
-const legalLinks = ["Privacy", "Terms", "Security"];
-
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { CynalitxLogo } from "@/components/ui/logo";
+
+const services = [
+  "vCISO Services",
+  "Security Assessment",
+  "Cloud Security",
+  "Managed SOC",
+  "Penetration Testing",
+  "Incident Response",
+  "Compliance Audits",
+  "Identity Management",
+];
+
+const legalLinks = ["Privacy", "Terms", "Security"];
 
 export function Footer() {
   const year = new Date().getFullYear();
 
+  // Split services into two columns
+  const midPoint = Math.ceil(services.length / 2);
+  const leftServices = services.slice(0, midPoint);
+  const rightServices = services.slice(midPoint);
+
   return (
-    <footer className="mt-auto border-t border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] snap-start">
-      <div className="layout-container grid gap-8 px-6 py-12 text-sm md:grid-cols-4">
-        <div>
-          <div className="flex items-center gap-2 mb-3">
+    <footer className="mt-auto border-t border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)]">
+      <div className="layout-container grid gap-8 px-6 py-12 md:grid-cols-3 lg:gap-12">
+        {/* Column 1: Brand (As requested: "Leave as is") */}
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-2">
             <CynalitxLogo className="h-6 w-6" />
             <p className="text-lg font-semibold text-[var(--foreground)]">Cynalitx</p>
           </div>
-          <p className="mt-3 text-xs leading-relaxed">
+          <p className="text-sm leading-relaxed max-w-xs">
             We build resilient platforms and teams that keep mission critical systems calm, clear, and trusted.
           </p>
         </div>
+
+        {/* Column 2: Services (2 sub-columns with 8 services) */}
         <div>
-          <p className="text-sm font-semibold text-[var(--foreground)]">Quick Links</p>
-          <ul className="mt-3 flex flex-col gap-2">
-            {quickLinks.map((link) => (
-              <li key={link}>
-                <a href="#" className="text-[var(--sidebar-foreground)] hover:text-[var(--foreground)]">
-                  {link}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <p className="text-sm font-semibold text-[var(--foreground)] mb-4">Services</p>
+          <div className="grid grid-cols-2 gap-4">
+            <ul className="flex flex-col gap-2">
+              {leftServices.map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-sm text-[var(--sidebar-foreground)] hover:text-[var(--foreground)] transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <ul className="flex flex-col gap-2">
+              {rightServices.map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-sm text-[var(--sidebar-foreground)] hover:text-[var(--foreground)] transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
+
+        {/* Column 3: Subscribe to Newsletter */}
         <div>
-          <p className="text-sm font-semibold text-[var(--foreground)]">Services</p>
-          <ul className="mt-3 flex flex-col gap-2">
-            {services.map((item) => (
-              <li key={item} className="text-[var(--sidebar-foreground)]">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="text-sm font-semibold text-[var(--foreground)]">Resources + Contact</p>
-          <ul className="mt-3 flex flex-col gap-2">
-            {resources.map((item) => (
-              <li key={item} className="text-[var(--sidebar-foreground)]">
-                {item}
-              </li>
-            ))}
-            <li className="mt-2 text-[var(--foreground)] font-semibold">contact@cynalitx.com</li>
-          </ul>
+          <p className="text-sm font-semibold text-[var(--foreground)] mb-4">Subscribe to Newsletter</p>
+          <p className="text-sm mb-4 text-[var(--muted-foreground)]">
+            Stay updated with our latest security insights and news.
+          </p>
+          <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              className="bg-[var(--background)]"
+            />
+            <Button type="submit" className="w-full">
+              Subscribe
+            </Button>
+          </form>
         </div>
       </div>
+
+      {/* Footer Bottom */}
       <div className="border-t border-[var(--border)] px-6 py-4 text-xs text-[var(--muted-foreground)]">
         <div className="layout-container flex flex-wrap items-center justify-between gap-3">
           <span>© {year} Cynalitx. All rights reserved.</span>
