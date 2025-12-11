@@ -49,7 +49,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative py-24 bg-background overflow-hidden min-h-screen flex flex-col justify-center">
+    <section id="contact" className="relative scroll-mt-24 py-24 bg-background overflow-hidden min-h-screen flex flex-col justify-center">
       {/* Background Blob */}
       <div className="absolute right-0 bottom-0 h-[500px] w-[500px] translate-y-1/2 translate-x-1/4 bg-secondary/10 blur-[120px] rounded-full" />
       <BackgroundGrid />

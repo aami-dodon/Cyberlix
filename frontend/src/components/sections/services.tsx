@@ -14,7 +14,7 @@ const servicesData = mapServicesWithIcons(servicesContent.list);
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative bg-background py-24 min-h-screen flex flex-col justify-center overflow-hidden">
+    <section id="services" className="relative scroll-mt-24 bg-background py-24 min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute right-0 top-1/4 h-1/2 w-1/3 bg-primary/5 blur-[120px]" />
       <BackgroundGrid />

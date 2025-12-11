@@ -10,7 +10,7 @@ const whyUsContent = homeContent.whyUs;
 
 export function WhyUsSection() {
   return (
-    <section id="why-cynalitx" className="relative overflow-hidden bg-background py-24 min-h-screen flex flex-col justify-center">
+    <section id="why-cynalitx" className="relative scroll-mt-24 overflow-hidden bg-background py-24 min-h-screen flex flex-col justify-center">
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-primary/5 to-transparent" />
       <BackgroundGrid />
 

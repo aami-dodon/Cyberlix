@@ -15,7 +15,7 @@ const leadershipData = leadershipContent.leaders;
 
 export function LeadershipSection() {
   return (
-    <section id="leadership" className="relative bg-background py-24 min-h-screen flex flex-col justify-center overflow-hidden">
+    <section id="leadership" className="relative scroll-mt-24 bg-background py-24 min-h-screen flex flex-col justify-center overflow-hidden">
       <BackgroundGrid />
       <div className="layout-container relative z-10 space-y-12">
         <FadeInSection className="text-center space-y-4">
