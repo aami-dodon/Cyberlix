@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { CynalitxLogo } from "@/components/ui/logo";
 import { ArrowRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import { toast } from "sonner";
 
 const legalLinks = ["Privacy", "Terms", "Security"];
 
@@ -57,11 +58,53 @@ export function Footer() {
               Latest security insights and news.
             </p>
           </div>
-          <form className="relative max-w-sm" onSubmit={(e) => e.preventDefault()}>
+          <form className="relative max-w-sm" onSubmit={async (e) => {
+            e.preventDefault();
+            const form = e.currentTarget;
+            const input = form.elements.namedItem("email") as HTMLInputElement;
+            const email = input.value;
+
+            // simple valid check
+            if (!email) return;
+
+            const button = form.querySelector("button") as HTMLButtonElement;
+            const originalIcon = button.innerHTML;
+            button.disabled = true;
+            // optional: add loading spinner here or just opacity
+
+            try {
+              const res = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+              });
+              const data = await res.json();
+
+              if (res.ok && data.success) {
+                // If using sonner or similar, we might need to import toast.
+                // Since I cannot easily add imports at top with replace_file_content without context of imports block, 
+                // I will use alert for fallback or try to import toast if possible, 
+                // BUT better yet, I should use multi_replace to add the import too.
+                // Assuming I will do multi_replace to add imports.
+                // For now, I will just put the logic here.
+                toast.success("Subscribed successfully!");
+                input.value = "";
+              } else {
+                toast.error(data.message || "Failed to subscribe");
+              }
+            } catch (err) {
+              console.error(err);
+              toast.error("Something went wrong. Please try again.");
+            } finally {
+              button.disabled = false;
+            }
+          }}>
             <Input
+              name="email"
               type="email"
               placeholder="email@domain.com"
               className="bg-[var(--background)] pr-12 h-10 border-[var(--border)] focus-visible:ring-[var(--primary)]"
+              required
             />
             <Button
               type="submit"

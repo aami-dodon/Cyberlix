@@ -4,37 +4,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
-
-const leaders = [
-  {
-    name: "Raamesh Kotian",
-    title: "Co-Founder",
-    image: "/images/team/ramesh.jpeg",
-    initials: "RK",
-    bio: [
-      "28+ years in IT, Cyber Risk, and Business Transformation. Led major cyber risk functions at Credit Suisse, IDFC, Poonawalla Fincorp, and HDFC Bank.",
-    ],
-    socials: {
-      linkedin: "#",
-      twitter: "#",
-      email: "mailto:contact@cynalitx.com",
-    },
-  },
-  {
-    name: "Amit Patil",
-    title: "Co-Founder",
-    image: "/images/team/amit.jpeg",
-    initials: "AP",
-    bio: [
-      "18+ years in cybersecurity across banking and tech. Former Deputy CISO at RBL Bank, specializing in security architecture and regulatory compliance.",
-    ],
-    socials: {
-      linkedin: "#",
-      twitter: "#",
-      email: "mailto:contact@cynalitx.com",
-    },
-  },
-];
+import { leadershipData } from "@/config/leadership";
+import Link from "next/link";
 
 export function LeadershipSection() {
   return (
@@ -51,7 +22,7 @@ export function LeadershipSection() {
 
         <FadeInSection delay={200}>
           <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-            {leaders.map((leader) => (
+            {leadershipData.map((leader) => (
               <article
                 key={leader.name}
                 className="group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 transition-all hover:border-[var(--primary)]/50 hover:shadow-[0_0_30px_-5px_var(--primary)]/20"
@@ -97,21 +68,21 @@ export function LeadershipSection() {
                 </div>
 
                 <div className="space-y-4 text-[var(--muted-foreground)] flex-grow">
-                  {leader.bio.map((line, index) => (
-                    <p key={index} className="text-base leading-relaxed">
-                      {line}
-                    </p>
-                  ))}
+                  <p className="text-base leading-relaxed">
+                    {leader.shortBio}
+                  </p>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                  <Button
-                    variant="outline"
-                    className="w-full sm:w-auto group/btn border-[var(--primary)]/20 hover:border-[var(--primary)] hover:bg-[var(--primary)]/10 hover:text-[var(--primary)]"
-                  >
-                    View Profile
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
+                  <Link href={`/leadership/${leader.slug}`}>
+                    <Button
+                      variant="outline"
+                      className="w-full sm:w-auto group/btn border-[var(--primary)]/20 hover:border-[var(--primary)] hover:bg-[var(--primary)]/10 hover:text-[var(--primary)]"
+                    >
+                      View Profile
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    </Button>
+                  </Link>
                 </div>
               </article>
             ))}

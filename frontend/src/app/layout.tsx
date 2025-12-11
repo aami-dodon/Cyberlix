@@ -71,7 +71,9 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col bg-[var(--background)] text-[var(--foreground)]">
             <Header />
             <main className="flex-grow pt-0">{children}</main>
-            <Footer />
+            <div className="snap-start">
+              <Footer />
+            </div>
           </div>
         </ThemeProviderWrapper>
       </body>

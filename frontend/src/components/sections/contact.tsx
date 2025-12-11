@@ -3,8 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Loader2 } from "lucide-react";
 import { FadeInSection } from "@/components/ui/fade-in-section";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const supportEmail =
   process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "contact@cynalitx.com";
@@ -13,6 +15,37 @@ const supportPhone =
 const supportPhoneHref = supportPhone.replace(/[^+\d]/g, "");
 
 export function ContactSection() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        toast.success("Message sent successfully!");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        toast.error(result.message || "Failed to send message");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <section id="contact" className="relative py-24 bg-[var(--background)] overflow-hidden h-screen flex flex-col justify-center">
       {/* Background Blob */}
@@ -66,17 +99,20 @@ export function ContactSection() {
           {/* Form */}
           <FadeInSection delay={200} className="flex flex-col h-full justify-end">
             <div className="bg-[var(--card)] p-8 md:p-10 rounded-3xl border border-[var(--border)] shadow-2xl shadow-black/20 backdrop-blur-xl">
-              <form className="flex flex-col gap-6">
+              <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
                     <Input
+                      name="name"
                       placeholder="Name"
                       aria-label="Name"
+                      required
                       className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
                     />
                   </div>
                   <div className="space-y-2">
                     <Input
+                      name="company"
                       placeholder="Company"
                       aria-label="Company"
                       className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
@@ -87,14 +123,17 @@ export function ContactSection() {
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
                     <Input
+                      name="email"
                       placeholder="Email"
                       type="email"
                       aria-label="Email"
+                      required
                       className="h-12 bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50"
                     />
                   </div>
                   <div className="space-y-2">
                     <Input
+                      name="phone"
                       placeholder="Phone"
                       type="tel"
                       aria-label="Phone"
@@ -105,8 +144,10 @@ export function ContactSection() {
 
                 <div className="space-y-2">
                   <Textarea
+                    name="message"
                     placeholder="Tell us about your security needs..."
                     aria-label="Message"
+                    required
                     className="min-h-[150px] bg-black/20 border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]/30 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/50 resize-none p-4"
                   />
                 </div>
@@ -116,8 +157,16 @@ export function ContactSection() {
                     className="w-full h-12 px-8 text-base font-semibold shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
                     variant="default"
                     size="lg"
+                    disabled={isLoading}
                   >
-                    Request Consultation
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      "Request Consultation"
+                    )}
                   </Button>
                 </div>
               </form>
