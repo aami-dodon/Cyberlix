@@ -144,4 +144,12 @@
     width: min(1024px, 90vw);
     margin: 0 auto;
   }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
 }

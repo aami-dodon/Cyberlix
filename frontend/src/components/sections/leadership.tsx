@@ -82,16 +82,17 @@ export function LeadershipSection() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border">
-                  <Link href={`/leadership/${leader.slug}`}>
-                    <Button
-                      variant="glow"
-                      size="lg"
-                      className="w-full sm:w-auto group/btn"
-                    >
+                  <Button
+                    variant="glow"
+                    size="lg"
+                    className="w-full sm:w-auto group/btn"
+                    asChild
+                  >
+                    <Link href={`/leadership/${leader.slug}`}>
                       {leadershipSectionContent.ctaLabel}
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </Card>
             ))}

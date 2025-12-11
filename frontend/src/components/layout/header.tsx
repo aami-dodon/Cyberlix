@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import { Menu, Moon, Sun, ArrowRight, X } from "lucide-react";
+import React, { useState } from "react";
+import { Menu, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -19,7 +18,6 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetClose
 } from "@/components/ui/sheet";
 
 const navItems = [
@@ -87,49 +85,17 @@ function MobileMenu() {
           ))}
         </nav>
         <SheetFooter className="absolute bottom-6 left-6 right-6">
-          <div className="flex flex-col gap-4 w-full">
-            <div className="flex items-center justify-between px-4 py-2 rounded-lg border border-border bg-card/50">
-              <span className="text-sm font-medium">Switch Theme</span>
-              <ThemeToggle />
-            </div>
-            <Button
-              asChild
-              variant="glow"
-              className="w-full rounded-full font-semibold transition-all duration-300"
-              size="default"
-            >
-              <Link href="/coming-soon">Live Demo</Link>
-            </Button>
-          </div>
+          <Button
+            asChild
+            variant="glow"
+            className="w-full rounded-full font-semibold transition-all duration-300"
+            size="default"
+          >
+            <Link href="/coming-soon">Live Demo</Link>
+          </Button>
         </SheetFooter>
       </SheetContent>
-    </Sheet >
-  );
-}
-
-function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return <div className="w-9 h-9" />;
-
-  const isDark = resolvedTheme === "dark";
-
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="h-9 w-9 rounded-full border border-border/40 hover:bg-accent hover:text-accent-foreground"
-    >
-      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    </Sheet>
   );
 }
 
@@ -155,7 +121,6 @@ export function Header() {
         {/* Right Actions */}
         <div className="flex items-center gap-2 sm:gap-4 shrink-0">
           <div className="hidden md:flex items-center gap-2">
-            <ThemeToggle />
             <Button
               asChild
               variant="glow"

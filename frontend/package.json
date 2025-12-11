@@ -6,7 +6,8 @@
     "dev": "dotenv -e ../.env -- next dev",
     "build": "dotenv -e ../.env -- next build",
     "start": "dotenv -e ../.env -- next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "capture:screens": "node scripts/capture-screenshots.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -34,7 +35,6 @@
     "dotenv": "^17.2.3",
     "lucide-react": "^0.556.0",
     "next": "16.0.8",
-    "next-themes": "^0.4.6",
     "nodemailer": "^7.0.11",
     "react": "19.2.1",
     "react-dom": "19.2.1",
@@ -54,6 +54,7 @@
     "dotenv-cli": "^11.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
+    "playwright": "^1.57.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.4.0",
     "typescript": "^5"

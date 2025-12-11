@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProviderWrapper } from "./providers/theme-provider";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { Toaster } from "@/components/ui/sonner";
@@ -64,20 +63,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
-        <ThemeProviderWrapper>
-          <div className="flex min-h-screen flex-col bg-[var(--background)] text-[var(--foreground)]">
-            <Header />
-            <main className="flex-grow pt-0">{children}</main>
-            <div className="snap-start">
-              <Footer />
-            </div>
-            <Toaster />
+        <div className="flex min-h-screen flex-col bg-[var(--background)] text-[var(--foreground)]">
+          <Header />
+          <main className="flex-grow pt-0">{children}</main>
+          <div className="snap-start">
+            <Footer />
           </div>
-        </ThemeProviderWrapper>
+          <Toaster />
+        </div>
       </body>
     </html>
   );
