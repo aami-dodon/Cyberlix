@@ -11,10 +11,7 @@ const leaders = [
     image: "/images/team/ramesh.jpeg",
     initials: "RK",
     bio: [
-      "Raamesh Kotian has over 28 years of experience in Information Technology, Cyber Risk, Data Science, and Business Transformation.",
-      "He has held senior leadership roles in Credit Suisse, IDFC Bank, Poonawalla Fincorp, and HDFC Bank, and has also worked with Big 4 consulting firms and in the USA on SOX programs.",
-      "He has led major cyber risk functions, built enterprise security capabilities, and guided organizations through complex regulatory environments.",
-      "Raamesh is a mentor, coach, and frequent speaker at industry events including RSA Asia and DSCI Annual Conference.",
+      "28+ years in IT, Cyber Risk, and Business Transformation. Led major cyber risk functions at Credit Suisse, IDFC, Poonawalla Fincorp, and HDFC Bank.",
     ],
     socials: {
       linkedin: "#",
@@ -28,10 +25,7 @@ const leaders = [
     image: "/images/team/amit.jpeg",
     initials: "AP",
     bio: [
-      "Amit Patil is a cybersecurity leader with 18+ years of experience across banking, financial services, and technology sectors.",
-      "He has served as Deputy CISO at RBL Bank and as Head of Information Security at Syngene International.",
-      "Amit specializes in enterprise security architecture, cloud and data security, third-party risk management, and regulatory compliance frameworks including ISO 27001, SOC 2, and PCI DSS.",
-      "He is known for his practical, risk-based approach and strong alignment of cybersecurity with business outcomes.",
+      "18+ years in cybersecurity across banking and tech. Former Deputy CISO at RBL Bank, specializing in security architecture and regulatory compliance.",
     ],
     socials: {
       linkedin: "#",
@@ -43,7 +37,7 @@ const leaders = [
 
 export function LeadershipSection() {
   return (
-    <section className="relative bg-[var(--background)] py-24">
+    <section className="relative bg-[var(--background)] py-24 h-screen snap-start flex flex-col justify-center">
       <div className="layout-container space-y-12">
         <div className="text-center space-y-4">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">

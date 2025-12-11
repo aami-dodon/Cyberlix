@@ -10,7 +10,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)]">
+    <footer className="mt-auto border-t border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] snap-start">
       <div className="layout-container grid gap-8 px-6 py-12 text-sm md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 mb-3">

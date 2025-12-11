@@ -7,7 +7,7 @@ import { Mail, Phone } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <section className="relative py-24 bg-[var(--background)] overflow-hidden">
+    <section className="relative py-24 bg-[var(--background)] overflow-hidden h-screen snap-start flex flex-col justify-center">
       {/* Background Blob */}
       <div className="absolute right-0 bottom-0 h-[500px] w-[500px] translate-y-1/2 translate-x-1/4 bg-[var(--secondary)]/10 blur-[120px] rounded-full" />
 

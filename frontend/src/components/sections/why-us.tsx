@@ -14,7 +14,7 @@ const reasons = [
 
 export function WhyUsSection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--background)] py-24">
+    <section className="relative overflow-hidden bg-[var(--background)] py-24 h-screen snap-start flex flex-col justify-center">
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[var(--primary)]/5 to-transparent" />
 
       <div className="layout-container relative z-10 grid gap-12 md:grid-cols-2 items-center">

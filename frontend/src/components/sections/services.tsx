@@ -32,7 +32,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="relative bg-[var(--background)] py-24 min-h-[80vh] flex flex-col justify-center overflow-hidden">
+    <section className="relative bg-[var(--background)] py-24 h-screen snap-start flex flex-col justify-center overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute right-0 top-1/4 h-1/2 w-1/3 bg-[var(--primary)]/5 blur-[120px]" />
 
