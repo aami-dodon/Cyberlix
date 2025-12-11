@@ -20,14 +20,14 @@ export function Footer() {
   ].filter((link) => link.href);
 
   return (
-    <footer className="mt-auto border-t border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)]">
+    <footer className="mt-auto border-t border-border bg-card text-muted-foreground">
       <div className="layout-container grid gap-8 px-6 py-12 lg:grid-cols-[70%_30%] lg:gap-12">
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <CynalitxLogo className="h-6 w-6" />
-              <p className="text-lg font-semibold text-[var(--foreground)]">Cynalitx</p>
+              <p className="text-lg font-semibold text-foreground">Cynalitx</p>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               We build resilient platforms and teams that keep mission critical systems calm, clear, and trusted.
@@ -41,7 +41,7 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label={social.label}
               >
                 <social.icon className="h-5 w-5" />
@@ -53,8 +53,8 @@ export function Footer() {
         {/* Column 2: Newsletter */}
         <div className="flex flex-col gap-4">
           <div className="space-y-1">
-            <p className="text-sm font-semibold text-[var(--foreground)]">Newsletter</p>
-            <p className="text-xs text-[var(--muted-foreground)]">
+            <p className="text-sm font-semibold text-foreground">Newsletter</p>
+            <p className="text-xs text-muted-foreground">
               Latest security insights and news.
             </p>
           </div>
@@ -103,13 +103,14 @@ export function Footer() {
               name="email"
               type="email"
               placeholder="email@domain.com"
-              className="bg-[var(--background)] pr-12 h-10 border-[var(--border)] focus-visible:ring-[var(--primary)]"
+              variant="glass"
+              className="pr-12 bg-background"
               required
             />
             <Button
               type="submit"
               size="icon"
-              className="absolute right-1 top-1 h-8 w-8 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90"
+              className="absolute right-1 top-1 h-8 w-8 bg-primary text-primary-foreground hover:bg-primary/90"
             >
               <ArrowRight className="h-4 w-4" />
               <span className="sr-only">Subscribe</span>
@@ -119,7 +120,7 @@ export function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-[var(--border)] px-6 py-4 text-xs text-[var(--muted-foreground)]">
+      <div className="border-t border-border px-6 py-4 text-xs text-muted-foreground">
         <div className="layout-container flex flex-wrap items-center justify-between gap-3">
           <span>© {year} Cynalitx. All rights reserved.</span>
           <div className="flex gap-4">
@@ -127,7 +128,7 @@ export function Footer() {
               <Link
                 key={link}
                 href="/coming-soon"
-                className="text-[var(--sidebar-foreground)] hover:text-[var(--foreground)]"
+                className="text-sidebar-foreground hover:text-foreground"
               >
                 {link}
               </Link>

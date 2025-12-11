@@ -13,7 +13,7 @@ export function CynalitxLogo({ className, ...props }: LogoProps) {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={cn("text-[var(--primary)]", className)}
+            className={cn("text-primary", className)}
             {...props}
         >
             {/* Modern Shield Outline */}

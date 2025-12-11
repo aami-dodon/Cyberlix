@@ -38,11 +38,11 @@ const MainNav = React.memo(function MainNav() {
           <NavigationMenuItem key={item.name}>
             <NavigationMenuLink
               asChild
-              className="!bg-transparent !hover:bg-transparent !hover:text-[var(--primary)] focus:bg-transparent focus:text-[var(--primary)] data-[active]:bg-transparent data-[active]:text-[var(--primary)]"
+              className="bg-transparent hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent"
             >
               <Link
                 href={item.href}
-                className="relative group inline-flex h-8 items-center justify-center px-4 text-sm font-medium text-[var(--foreground)] transition-all hover:scale-105 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                className="relative group inline-flex h-8 items-center justify-center px-4 text-sm font-medium text-foreground/80 transition-colors hover:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               >
                 {item.name}
               </Link>
@@ -63,14 +63,14 @@ function MobileMenu() {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden text-[var(--foreground)]"
+          className="md:hidden text-foreground"
           aria-label="Open navigation menu"
         >
           <Menu className="h-6 w-6" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-xl">
-        <SheetHeader className="text-left border-b border-[var(--border)] pb-4 mb-4">
+      <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l border-border bg-background/95 backdrop-blur-xl">
+        <SheetHeader className="text-left border-b border-border pb-4 mb-4">
           <SheetTitle className="text-xl font-bold tracking-tight">Menu</SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col gap-2">
@@ -79,7 +79,7 @@ function MobileMenu() {
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-between rounded-md px-4 py-3 text-base font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)]"
+              className="flex items-center justify-between rounded-md px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               {item.name}
               <ArrowRight className="h-4 w-4 opacity-50" />
@@ -88,13 +88,14 @@ function MobileMenu() {
         </nav>
         <SheetFooter className="absolute bottom-6 left-6 right-6">
           <div className="flex flex-col gap-4 w-full">
-            <div className="flex items-center justify-between px-4 py-2 rounded-lg border border-[var(--border)] bg-[var(--card)]/50">
+            <div className="flex items-center justify-between px-4 py-2 rounded-lg border border-border bg-card/50">
               <span className="text-sm font-medium">Switch Theme</span>
               <ThemeToggle />
             </div>
             <Button
               asChild
-              className="w-full rounded-full font-semibold shadow-[0_0_15px_-3px_var(--primary)] hover:shadow-[0_0_20px_-3px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
+              variant="glow"
+              className="w-full rounded-full font-semibold transition-all duration-300"
               size="default"
             >
               <Link href="/coming-soon">Live Demo</Link>
@@ -102,7 +103,7 @@ function MobileMenu() {
           </div>
         </SheetFooter>
       </SheetContent>
-    </Sheet>
+    </Sheet >
   );
 }
 
@@ -123,7 +124,7 @@ function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="h-9 w-9 rounded-full border border-[var(--border)/40] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)]"
+      className="h-9 w-9 rounded-full border border-border/40 hover:bg-accent hover:text-accent-foreground"
     >
       <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -141,7 +142,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50 shrink-0">
           <CynalitxLogo className="h-8 w-8" />
-          <span className="text-lg font-bold tracking-tight text-[var(--foreground)] transition-all">
+          <span className="text-lg font-bold tracking-tight text-foreground transition-all">
             Cynalitx
           </span>
         </Link>
@@ -157,7 +158,8 @@ export function Header() {
             <ThemeToggle />
             <Button
               asChild
-              className="rounded-full font-semibold shadow-[0_0_15px_-3px_var(--primary)] hover:shadow-[0_0_20px_-3px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
+              variant="glow"
+              className="rounded-full font-semibold transition-all duration-300"
               size="default"
             >
               <Link href="/coming-soon">Live Demo</Link>
