@@ -2,7 +2,7 @@
 
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -10,12 +10,20 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const navItems = ["Home", "Services", "Why Cynalitx", "Leadership", "Resources"];
 
 const MainNav = React.memo(function MainNav() {
   return (
-    <NavigationMenu className="flex-1 justify-center">
+    <NavigationMenu className="hidden flex-1 justify-center md:flex">
       <NavigationMenuList className="flex gap-4">
         {navItems.map((item) => (
           <NavigationMenuItem key={item}>
@@ -28,6 +36,44 @@ const MainNav = React.memo(function MainNav() {
     </NavigationMenu>
   );
 });
+
+function MobileMenu() {
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button
+          variant="outline"
+          size="sm"
+          className="border-[var(--sidebar-border)] bg-[var(--sidebar)] px-2 py-2 text-[var(--sidebar-foreground)] hover:bg-[var(--sidebar-accent)] md:hidden"
+          aria-label="Open navigation menu"
+        >
+          <Menu size={18} />
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="right" className="md:hidden p-6">
+        <SheetHeader>
+          <SheetTitle className="text-lg">Navigation</SheetTitle>
+        </SheetHeader>
+        <nav className="mt-2 flex flex-col gap-3">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href="#"
+              className="rounded-md px-4 py-2 text-base font-medium text-[var(--foreground)] transition hover:bg-[var(--card)]/60"
+            >
+              {item}
+            </a>
+          ))}
+        </nav>
+        <SheetFooter>
+          <Button className="w-full text-[var(--sidebar-foreground)]" size="sm">
+            Book Consultation
+          </Button>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
+  );
+}
 
 function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -79,7 +125,7 @@ export function Header() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="layout-container flex items-center justify-between gap-6 px-10 py-4">
+      <div className="layout-container flex items-center justify-between gap-6 px-6 py-4 sm:px-10">
         <span className="text-lg font-semibold tracking-tight text-[var(--foreground)]">
           Cynalitx
         </span>
@@ -89,6 +135,7 @@ export function Header() {
           <Button className="text-[var(--sidebar-foreground)]" variant="default" size="sm">
             Book Consultation
           </Button>
+          <MobileMenu />
         </div>
       </div>
     </header>
