@@ -6,6 +6,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone } from "lucide-react";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 
+const supportEmail =
+  process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "contact@cynalitx.com";
+const supportPhone =
+  process.env.NEXT_PUBLIC_SUPPORT_PHONE ?? "+1 (555) 123-4567";
+const supportPhoneHref = supportPhone.replace(/[^+\d]/g, "");
+
 export function ContactSection() {
   return (
     <section id="contact" className="relative py-24 bg-[var(--background)] overflow-hidden h-screen flex flex-col justify-center">
@@ -37,8 +43,8 @@ export function ContactSection() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-[var(--muted-foreground)] uppercase tracking-wider">Email Us</p>
-                  <a href="mailto:contact@cynalitx.com" className="text-base font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors truncate block">
-                    contact@cynalitx.com
+                  <a href={`mailto:${supportEmail}`} className="text-base font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors truncate block">
+                    {supportEmail}
                   </a>
                 </div>
               </div>
@@ -49,8 +55,8 @@ export function ContactSection() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-[var(--muted-foreground)] uppercase tracking-wider">Call Us</p>
-                  <a href="tel:+15551234567" className="text-base font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors truncate block">
-                    +1 (555) 123-4567
+                  <a href={`tel:${supportPhoneHref}`} className="text-base font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors truncate block">
+                    {supportPhone}
                   </a>
                 </div>
               </div>

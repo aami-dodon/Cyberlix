@@ -14,9 +14,9 @@ build/
 out/
 coverage/
 
-# Environment
-.env
-.env.*
+
+*.env
+*.env.*
 
 # macOS
 .DS_Store
