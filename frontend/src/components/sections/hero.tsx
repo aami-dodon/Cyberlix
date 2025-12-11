@@ -29,11 +29,12 @@ export function HeroSection() {
 
           <div className="pt-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
             <Button
+              asChild
               variant="default"
               size="lg"
               className="h-12 px-8 text-base font-semibold shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
             >
-              Book Consultation
+              <a href="#contact">Book Consultation</a>
             </Button>
           </div>
         </div>
