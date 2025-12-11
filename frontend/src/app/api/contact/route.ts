@@ -25,7 +25,7 @@ export async function POST(request: Request) {
         const { name, company, email, phone, message } = result.data;
 
         // Check if SMTP is configured
-        if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+        if (!process.env.EMAIL_SMTP_HOST || !process.env.EMAIL_SMTP_USER || !process.env.EMAIL_SMTP_PASS) {
             console.error("SMTP credentials missing");
             return NextResponse.json(
                 { success: false, message: "Server configuration error: SMTP credentials missing" },
@@ -34,18 +34,18 @@ export async function POST(request: Request) {
         }
 
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: Number(process.env.SMTP_PORT) || 587,
-            secure: Number(process.env.SMTP_PORT) === 465,
+            host: process.env.EMAIL_SMTP_HOST,
+            port: Number(process.env.EMAIL_SMTP_PORT) || 465,
+            secure: process.env.EMAIL_SMTP_SECURE === 'true',
             auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
+                user: process.env.EMAIL_SMTP_USER,
+                pass: process.env.EMAIL_SMTP_PASS,
             },
         });
 
         const mailOptions = {
-            from: process.env.SMTP_USER,
-            to: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || process.env.SMTP_USER,
+            from: process.env.EMAIL_FROM || process.env.EMAIL_SMTP_USER,
+            to: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || process.env.EMAIL_SMTP_USER,
             replyTo: email,
             subject: `New Contact Form Submission from ${name}`,
             text: `

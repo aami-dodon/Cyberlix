@@ -14,10 +14,6 @@ build/
 out/
 coverage/
 
-
-.env
-
-
 # macOS
 .DS_Store
 

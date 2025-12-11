@@ -51,20 +51,20 @@ export async function POST(request: Request) {
 
         // 2. Send email via Nodemailer
         // Only attempt if SMTP config is present
-        if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+        if (process.env.EMAIL_SMTP_HOST && process.env.EMAIL_SMTP_USER && process.env.EMAIL_SMTP_PASS) {
             const transporter = nodemailer.createTransport({
-                host: process.env.SMTP_HOST,
-                port: Number(process.env.SMTP_PORT) || 587,
-                secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for other ports
+                host: process.env.EMAIL_SMTP_HOST,
+                port: Number(process.env.EMAIL_SMTP_PORT) || 465,
+                secure: process.env.EMAIL_SMTP_SECURE === 'true', // true for 465, false for other ports
                 auth: {
-                    user: process.env.SMTP_USER,
-                    pass: process.env.SMTP_PASS,
+                    user: process.env.EMAIL_SMTP_USER,
+                    pass: process.env.EMAIL_SMTP_PASS,
                 },
             });
 
             await transporter.sendMail({
-                from: process.env.SMTP_USER,
-                to: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || process.env.SMTP_USER,
+                from: process.env.EMAIL_FROM || process.env.EMAIL_SMTP_USER,
+                to: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || process.env.EMAIL_SMTP_USER,
                 subject: "New Newsletter Subscriber",
                 text: `New subscriber: ${email}`,
                 html: `<p>New subscriber: <strong>${email}</strong></p>`,
