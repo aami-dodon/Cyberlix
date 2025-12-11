@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
 import "./globals.css"; // Ensure styles are loaded
 import { RotateCcw } from "lucide-react";
@@ -18,8 +19,9 @@ export default function GlobalError({
 
     return (
         <html lang="en">
-            <body className="flex min-h-screen items-center justify-center bg-[var(--background)] text-[var(--foreground)] antialiased">
-                <div className="flex flex-col items-center justify-center p-4 text-center">
+            <body className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--background)] text-[var(--foreground)] antialiased">
+                <BackgroundGrid />
+                <div className="relative z-10 flex flex-col items-center justify-center p-4 text-center">
                     <div className="rounded-full bg-red-100 p-4 dark:bg-red-900/20">
                         <svg
                             className="h-12 w-12 text-red-600 dark:text-red-400"

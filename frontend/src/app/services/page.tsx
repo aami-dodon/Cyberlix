@@ -1,27 +1,33 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { BackgroundGrid } from "@/components/ui/background-grid";
 import { FadeInSection } from "@/components/ui/fade-in-section";
-import { servicesData } from "@/config/services";
+import servicesContent from "@/content/services.json";
+import { mapServicesWithIcons } from "@/lib/service-icon-map";
 import Link from "next/link";
+
+const servicesData = mapServicesWithIcons(servicesContent.list);
+const servicesPageContent = servicesContent.page;
 
 export default function ServicesPage() {
     return (
-        <main className="min-h-screen bg-[var(--background)] pt-32 pb-20">
-            <div className="layout-container">
+        <main className="relative min-h-screen overflow-hidden bg-[var(--background)] pt-32 pb-20">
+            <BackgroundGrid />
+            <div className="layout-container relative z-10">
                 <FadeInSection>
                     <Link
                         href="/"
                         className="inline-flex items-center text-sm text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors mb-6"
                     >
-                        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home Page
+                        <ArrowLeft className="mr-2 h-4 w-4" /> {servicesPageContent.backLinkLabel}
                     </Link>
                     <div className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
-                            Our Services
+                            {servicesPageContent.heading}
                         </h1>
                         <p className="text-lg text-[var(--muted-foreground)] max-w-2xl mx-auto">
-                            Comprehensive cybersecurity solutions designed to protect your organization against evolving threats and ensure regulatory compliance.
+                            {servicesPageContent.description}
                         </p>
                     </div>
                 </FadeInSection>
@@ -48,7 +54,7 @@ export default function ServicesPage() {
                                     </p>
 
                                     <div className="flex items-center text-sm font-semibold text-[var(--primary)] group-hover:translate-x-1 transition-transform mt-auto">
-                                        View Details <ArrowRight className="ml-2 h-4 w-4" />
+                                        {servicesPageContent.cardCtaLabel} <ArrowRight className="ml-2 h-4 w-4" />
                                     </div>
                                 </div>
                             </Link>

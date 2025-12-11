@@ -2,28 +2,35 @@
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Card } from "@/components/ui/card";
 import { FadeInSection } from "@/components/ui/fade-in-section";
-import { servicesData } from "@/config/services";
+import homeContent from "@/content/home.json";
+import servicesContent from "@/content/services.json";
+import { mapServicesWithIcons } from "@/lib/service-icon-map";
+
+const servicesSectionContent = homeContent.servicesSection;
+const servicesData = mapServicesWithIcons(servicesContent.list);
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative bg-background py-24 h-screen flex flex-col justify-center overflow-hidden">
+    <section id="services" className="relative bg-background py-24 min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute right-0 top-1/4 h-1/2 w-1/3 bg-primary/5 blur-[120px]" />
+      <BackgroundGrid />
 
       <div className="layout-container relative z-10">
         <FadeInSection>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div className="space-y-3 max-w-2xl">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
-                Our Expertise
+                {servicesSectionContent.eyebrow}
               </p>
               <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
-                Comprehensive security
+                {servicesSectionContent.title}
               </h2>
               <p className="text-lg text-muted-foreground line-clamp-2">
-                End-to-end cybersecurity solutions tailored to your specific risk profile.
+                {servicesSectionContent.description}
               </p>
             </div>
           </div>
@@ -51,7 +58,7 @@ export function ServicesSection() {
                   </p>
 
                   <a href={`/services/${service.slug}`} className="flex items-center text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform cursor-pointer mt-auto">
-                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                    {servicesSectionContent.cardLinkLabel} <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </div>
               </Card>
@@ -67,7 +74,7 @@ export function ServicesSection() {
               className="h-12 px-8 text-base font-semibold transition-all duration-300"
               asChild
             >
-              <a href="/services">View All Services</a>
+              <a href={servicesSectionContent.cta.href}>{servicesSectionContent.cta.label}</a>
             </Button>
           </div>
         </FadeInSection>

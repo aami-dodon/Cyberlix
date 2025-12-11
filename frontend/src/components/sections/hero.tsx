@@ -2,8 +2,12 @@
 
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { BackgroundGrid } from "@/components/ui/background-grid";
 import { cn } from "@/lib/utils";
 import { sessionState } from "@/lib/session-store";
+import homeContent from "@/content/home.json";
+
+const heroContent = homeContent.hero;
 
 export function HeroSection() {
   const shouldAnimate = !sessionState.hasVisitedHome;
@@ -18,8 +22,8 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-[100px]" />
         <div className="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-secondary/20 blur-[100px]" />
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" /> {/* Optional grid if available, otherwise just gradients */}
       </div>
+      <BackgroundGrid />
 
       <div className="layout-container relative z-10 space-y-8 py-24">
         <div className="max-w-4xl space-y-6">
@@ -29,7 +33,7 @@ export function HeroSection() {
               shouldAnimate && "animate-in fade-in slide-in-from-bottom-4 duration-700"
             )}
           >
-            Enterprise Cybersecurity Leadership
+            {heroContent.eyebrow}
           </p>
 
           <h1
@@ -38,7 +42,7 @@ export function HeroSection() {
               shouldAnimate && "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100"
             )}
           >
-            We Secure Your Cyber Presence
+            {heroContent.title}
           </h1>
 
           <p
@@ -47,8 +51,7 @@ export function HeroSection() {
               shouldAnimate && "animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200"
             )}
           >
-            Cynalitx provides end-to-end cybersecurity solutions — from strategy and governance to 24×7 threat
-            monitoring, cloud security, data protection, and compliance.
+            {heroContent.description}
           </p>
 
           <div
@@ -63,7 +66,7 @@ export function HeroSection() {
               size="lg"
               className="h-12 px-8 text-base font-semibold transition-all duration-300"
             >
-              <a href="#contact">Book Consultation</a>
+              <a href={heroContent.cta.href}>{heroContent.cta.label}</a>
             </Button>
           </div>
         </div>

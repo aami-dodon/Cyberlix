@@ -1,0 +1,41 @@
+{
+  "brand": "Cynalitx",
+  "sections": [
+    {
+      "mode": "Light Mode",
+      "background": "light",
+      "examples": [
+        {
+          "label": "Default (Color inherited)",
+          "variant": "default"
+        },
+        {
+          "label": "Large",
+          "variant": "large"
+        },
+        {
+          "label": "With Text",
+          "variant": "withText"
+        }
+      ]
+    },
+    {
+      "mode": "Dark Mode",
+      "background": "dark",
+      "examples": [
+        {
+          "label": "Default (Color inherited)",
+          "variant": "default"
+        },
+        {
+          "label": "Large",
+          "variant": "large"
+        },
+        {
+          "label": "With Text",
+          "variant": "withText"
+        }
+      ]
+    }
+  ]
+}

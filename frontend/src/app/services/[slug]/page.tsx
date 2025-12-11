@@ -1,13 +1,18 @@
 import { notFound } from "next/navigation";
-import { servicesData } from "@/config/services";
+import servicesContent from "@/content/services.json";
+import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { FadeInSection } from "@/components/ui/fade-in-section";
+import { mapServicesWithIcons } from "@/lib/service-icon-map";
+
+const servicesData = mapServicesWithIcons(servicesContent.list);
+const serviceDetailContent = servicesContent.detailPage;
 
 // This is a server component by default in app directory
 export function generateStaticParams() {
-    return servicesData.map((service) => ({
+    return servicesContent.list.map((service) => ({
         slug: service.slug,
     }));
 }
@@ -21,14 +26,15 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     }
 
     return (
-        <main className="min-h-screen bg-[var(--background)] pt-32 pb-20">
-            <div className="layout-container">
+        <main className="relative min-h-screen overflow-hidden bg-[var(--background)] pt-32 pb-20">
+            <BackgroundGrid />
+            <div className="layout-container relative z-10">
                 <FadeInSection>
                     <Link
                         href="/services"
                         className="inline-flex items-center text-sm text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors mb-8"
                     >
-                        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Services
+                        <ArrowLeft className="mr-2 h-4 w-4" /> {serviceDetailContent.backLinkLabel}
                     </Link>
                 </FadeInSection>
 
@@ -47,7 +53,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
                             <div className="flex gap-4">
                                 <Button size="lg" className="text-base" asChild>
-                                    <Link href="/#contact">Book a Consultation</Link>
+                                    <Link href="/#contact">{serviceDetailContent.ctaLabel}</Link>
                                 </Button>
                             </div>
                         </div>
@@ -56,7 +62,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     <FadeInSection delay={200}>
                         <div className="bg-[var(--card)]/50 border border-[var(--border)] rounded-2xl p-8 lg:p-10">
                             <h2 className="text-2xl font-bold text-[var(--foreground)] mb-6">
-                                What We Offer
+                                {serviceDetailContent.sectionHeading}
                             </h2>
                             <ul className="space-y-4">
                                 {service.details.map((detail, index) => (

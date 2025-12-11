@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "title": "Security - Cynalitx",
+    "description": "Security information for Cynalitx"
+  },
+  "backLinkLabel": "Back to Home Page",
+  "heading": "Security",
+  "lastUpdated": "Last updated: December 12, 2025",
+  "sections": [
+    {
+      "heading": "1. Our Commitment to Security",
+      "body": [
+        "At Cynalitx, specific attention is paid to the security of our platform and the protection of your data. We employ industry-standard security practices to ensure that your information remains safe."
+      ]
+    },
+    {
+      "heading": "2. Data Protection",
+      "body": [
+        "We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information."
+      ]
+    },
+    {
+      "heading": "3. Monitoring and Reporting",
+      "body": [
+        "We continuously monitor our systems for potential vulnerabilities and attacks. If you believe you have found a security vulnerability in our service, please report it to us at security@cynalitx.com."
+      ]
+    },
+    {
+      "heading": "4. Certified Processes",
+      "body": [
+        "Our security processes are designed to meet the rigorous standards expected by enterprise clients. We regularly review and update our security policies to adapt to evolving threats."
+      ]
+    }
+  ]
+}

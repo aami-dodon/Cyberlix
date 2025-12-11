@@ -1,13 +1,17 @@
 
-import { leadershipData } from "@/config/leadership";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { BackgroundGrid } from "@/components/ui/background-grid";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { Linkedin, Twitter, Mail, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import leadershipContent from "@/content/leadership.json";
+
+const leadershipData = leadershipContent.leaders;
+const leadershipPageContent = leadershipContent.page;
 
 export async function generateStaticParams() {
-    return leadershipData.map((leader) => ({
+    return leadershipContent.leaders.map((leader) => ({
         slug: leader.slug,
     }));
 }
@@ -21,14 +25,15 @@ export default async function LeaderPage(props: { params: Promise<{ slug: string
     }
 
     return (
-        <div className="min-h-screen pt-24 pb-12 px-6">
-            <div className="layout-container max-w-4xl mx-auto space-y-12">
+        <div className="relative min-h-screen overflow-hidden bg-[var(--background)] pt-24 pb-12 px-6">
+            <BackgroundGrid />
+            <div className="layout-container relative z-10 max-w-4xl mx-auto space-y-12">
                 <FadeInSection>
                     <Link
                         href="/#leadership"
                         className="inline-flex items-center text-sm text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors mb-8"
                     >
-                        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Leadership
+                        <ArrowLeft className="mr-2 h-4 w-4" /> {leadershipPageContent.backLinkLabel}
                     </Link>
 
                     <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
@@ -72,7 +77,9 @@ export default async function LeaderPage(props: { params: Promise<{ slug: string
 
                         <div className="w-full md:w-2/3 space-y-8">
                             <div className="space-y-4">
-                                <h2 className="text-2xl font-semibold border-b border-[var(--border)] pb-4 mb-6">About</h2>
+                                <h2 className="text-2xl font-semibold border-b border-[var(--border)] pb-4 mb-6">
+                                    {leadershipPageContent.aboutHeading}
+                                </h2>
                                 <div className="space-y-6 text-lg leading-relaxed text-[var(--muted-foreground)]">
                                     {leader.fullBio.map((paragraph, index) => (
                                         <p key={index}>{paragraph}</p>

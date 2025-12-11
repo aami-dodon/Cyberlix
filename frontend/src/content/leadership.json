@@ -1,0 +1,46 @@
+{
+  "page": {
+    "backLinkLabel": "Back to Leadership",
+    "aboutHeading": "About"
+  },
+  "leaders": [
+    {
+      "name": "Raamesh Kotian",
+      "slug": "raamesh-kotian",
+      "title": "Co-Founder",
+      "image": "/images/team/ramesh.jpeg",
+      "initials": "RK",
+      "shortBio": "28+ years in IT, Cyber Risk, and Business Transformation. Led major cyber risk functions at Credit Suisse, IDFC, Poonawalla Fincorp, and HDFC Bank.",
+      "fullBio": [
+        "Raamesh Kotian has 28+ years of experience in senior positions in the areas of Information Technology, Application Development, Cyber Risk, Cyber Resiliency, Data Science, Governance and Business Transformation, supporting various businesses like Retail Banking, Consumer Cards, Investment Banking, Insurance, and Payments.",
+        "He has led the Cyber Security Risk functions for Credit Suisse, IDFC Bank, Poonawalla Fincorp and HDFC Bank. He also has experience of working with Big 4 consulting company and also was based in USA providing SOX consultancy.",
+        "Raamesh is passionate about helping organizations in building and transforming their risk functions using technology and managing cyber security risk proactively. He mentors and coaches' leaders, students and risk professionals at workplace and outside. Ramesh has spoken in multiple forums including RSA Asia Security Conference and DSCI Annual conference."
+      ],
+      "socials": {
+        "linkedin": "#",
+        "twitter": "#",
+        "email": "mailto:contact@cynalitx.com"
+      }
+    },
+    {
+      "name": "Amit Patil",
+      "slug": "amit-patil",
+      "title": "Co-Founder",
+      "image": "/images/team/amit.jpeg",
+      "initials": "AP",
+      "shortBio": "18+ years in cybersecurity across banking and tech. Former Deputy CISO at RBL Bank, specializing in security architecture and regulatory compliance.",
+      "fullBio": [
+        "Amit Patil is a seasoned cybersecurity leader with over 18 years of experience across banking, financial services, and technology domains. He has served in leadership roles including Deputy CISO at RBL Bank and Head of Information Security at Syngene International.",
+        "Amit specializes in enterprise security architecture, risk management, cloud and data security, and third-party risk governance. He has successfully driven implementation of ISO 27001, SOC 2, PCI DSS, and regulatory compliance frameworks across large enterprises.",
+        "His expertise extends to application security, threat management, and cybersecurity strategy aligned with business objectives.",
+        "Amit has presented to Boards and Executive Committees on cyber risk posture and resilience initiatives.",
+        "Amit is known for his practical, risk-based approach and focus on aligning security with business growth."
+      ],
+      "socials": {
+        "linkedin": "#",
+        "twitter": "#",
+        "email": "mailto:contact@cynalitx.com"
+      }
+    }
+  ]
+}

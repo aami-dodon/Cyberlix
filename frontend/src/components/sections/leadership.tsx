@@ -1,23 +1,29 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
-import { leadershipData } from "@/config/leadership";
 import Link from "next/link";
+import homeContent from "@/content/home.json";
+import leadershipContent from "@/content/leadership.json";
+
+const leadershipSectionContent = homeContent.leadership;
+const leadershipData = leadershipContent.leaders;
 
 export function LeadershipSection() {
   return (
-    <section id="leadership" className="relative bg-background py-24 h-screen flex flex-col justify-center">
-      <div className="layout-container space-y-12">
+    <section id="leadership" className="relative bg-background py-24 min-h-screen flex flex-col justify-center overflow-hidden">
+      <BackgroundGrid />
+      <div className="layout-container relative z-10 space-y-12">
         <FadeInSection className="text-center space-y-4">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
-            Leadership
+            {leadershipSectionContent.eyebrow}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Visionaries behind the shield
+            {leadershipSectionContent.heading}
           </h2>
         </FadeInSection>
 
@@ -82,7 +88,7 @@ export function LeadershipSection() {
                       size="lg"
                       className="w-full sm:w-auto group/btn"
                     >
-                      View Profile
+                      {leadershipSectionContent.ctaLabel}
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Button>
                   </Link>

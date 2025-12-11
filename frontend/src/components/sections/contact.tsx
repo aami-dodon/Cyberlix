@@ -1,5 +1,6 @@
 "use client";
 
+import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,11 +9,11 @@ import { Mail, Phone, Loader2 } from "lucide-react";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { useState } from "react";
 import { toast } from "sonner";
+import homeContent from "@/content/home.json";
 
-const supportEmail =
-  process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "contact@cynalitx.com";
-const supportPhone =
-  process.env.NEXT_PUBLIC_SUPPORT_PHONE ?? "+1 (555) 123-4567";
+const contactContent = homeContent.contact;
+const supportEmail = contactContent.support.defaultEmail;
+const supportPhone = contactContent.support.defaultPhone;
 const supportPhoneHref = supportPhone.replace(/[^+\d]/g, "");
 
 export function ContactSection() {
@@ -48,9 +49,10 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative py-24 bg-background overflow-hidden h-screen flex flex-col justify-center">
+    <section id="contact" className="relative py-24 bg-background overflow-hidden min-h-screen flex flex-col justify-center">
       {/* Background Blob */}
       <div className="absolute right-0 bottom-0 h-[500px] w-[500px] translate-y-1/2 translate-x-1/4 bg-secondary/10 blur-[120px] rounded-full" />
+      <BackgroundGrid />
 
       <div className="layout-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-16">
@@ -59,14 +61,16 @@ export function ContactSection() {
           <FadeInSection className="space-y-8">
             <div className="space-y-4">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
-                Get in Touch
+                {contactContent.eyebrow}
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                Speak with our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-foreground">cybersecurity experts</span>
+                {contactContent.titlePrefix}{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-foreground">
+                  {contactContent.titleHighlight}
+                </span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-xl">
-                Speak with our cybersecurity experts to strengthen your organization’s security posture and accelerate
-                compliance readiness.
+                {contactContent.description}
               </p>
             </div>
 
@@ -76,7 +80,9 @@ export function ContactSection() {
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Email Us</p>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    {contactContent.support.emailLabel}
+                  </p>
                   <a href={`mailto:${supportEmail}`} className="text-base font-bold text-foreground hover:text-primary transition-colors break-words block">
                     {supportEmail}
                   </a>
@@ -88,7 +94,9 @@ export function ContactSection() {
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Call Us</p>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    {contactContent.support.phoneLabel}
+                  </p>
                   <a href={`tel:${supportPhoneHref}`} className="text-base font-bold text-foreground hover:text-primary transition-colors break-words block">
                     {supportPhone}
                   </a>
@@ -105,7 +113,7 @@ export function ContactSection() {
                   <div className="space-y-2">
                     <Input
                       name="name"
-                      placeholder="Name"
+                      placeholder={contactContent.placeholders.name}
                       aria-label="Name"
                       required
                       variant="glass"
@@ -115,7 +123,7 @@ export function ContactSection() {
                   <div className="space-y-2">
                     <Input
                       name="company"
-                      placeholder="Company"
+                      placeholder={contactContent.placeholders.company}
                       aria-label="Company"
                       variant="glass"
                       size="lg"
@@ -127,7 +135,7 @@ export function ContactSection() {
                   <div className="space-y-2">
                     <Input
                       name="email"
-                      placeholder="Email"
+                      placeholder={contactContent.placeholders.email}
                       type="email"
                       aria-label="Email"
                       required
@@ -138,7 +146,7 @@ export function ContactSection() {
                   <div className="space-y-2">
                     <Input
                       name="phone"
-                      placeholder="Phone"
+                      placeholder={contactContent.placeholders.phone}
                       type="tel"
                       aria-label="Phone"
                       variant="glass"
@@ -150,7 +158,7 @@ export function ContactSection() {
                 <div className="space-y-2">
                   <Textarea
                     name="message"
-                    placeholder="Tell us about your security needs..."
+                    placeholder={contactContent.placeholders.message}
                     aria-label="Message"
                     required
                     variant="glass"
@@ -168,10 +176,10 @@ export function ContactSection() {
                     {isLoading ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Sending...
+                        {contactContent.cta.loadingLabel}
                       </>
                     ) : (
-                      "Request Consultation"
+                      contactContent.cta.label
                     )}
                   </Button>
                 </div>
