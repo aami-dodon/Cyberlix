@@ -36,7 +36,7 @@ export function ServicesSection() {
       {/* Background Decoration */}
       <div className="absolute right-0 top-1/4 h-1/2 w-1/3 bg-[var(--primary)]/5 blur-[120px]" />
 
-      <div className="layout-container relative z-10 w-full">
+      <div className="layout-container relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="space-y-3 max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">

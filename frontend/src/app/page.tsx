@@ -7,15 +7,13 @@ import { ContactSection } from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <section className="w-full py-12">
-      <div className="layout-container space-y-10">
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <WhyUsSection />
-        <LeadershipSection />
-        <ContactSection />
-      </div>
-    </section>
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <WhyUsSection />
+      <LeadershipSection />
+      <ContactSection />
+    </>
   );
 }

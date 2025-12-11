@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Menu, Moon, Sun, ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -32,7 +32,7 @@ const navItems = [
 const MainNav = React.memo(function MainNav() {
   return (
     <NavigationMenu className="hidden md:flex">
-      <NavigationMenuList className="flex gap-1 bg-background/50 p-1 rounded-full border border-border/40 backdrop-blur-sm">
+      <NavigationMenuList className="flex gap-1">
         {navItems.map((item) => (
           <NavigationMenuItem key={item.name}>
             <NavigationMenuLink
@@ -125,31 +125,15 @@ function ThemeToggle() {
   );
 }
 
+import { CynalitxLogo } from "@/components/ui/logo";
+
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useLayoutEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 sm:pt-6 pointer-events-none">
-      <header
-        className={cn(
-          "pointer-events-auto transition-all duration-500 ease-out flex items-center justify-between",
-          "w-[90vw] max-w-[1024px] rounded-full border shadow-lg py-2 px-4 sm:px-6",
-          isScrolled
-            ? "bg-[var(--background)]/80 backdrop-blur-xl border-[var(--border)]"
-            : "bg-[var(--background)]/40 backdrop-blur-md border-[var(--border)]/50"
-        )}
-      >
+    <div className="absolute top-0 left-0 right-0 z-50 py-4">
+      <header className="layout-container flex items-center justify-between relative">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 z-50 shrink-0">
+          <CynalitxLogo className="h-8 w-8" />
           <span className="text-lg font-bold tracking-tight text-[var(--foreground)] transition-all">
             Cynalitx
           </span>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
 
@@ -8,6 +8,7 @@ const leaders = [
   {
     name: "Raamesh Kotian",
     title: "Co-Founder",
+    image: "/images/team/ramesh.jpeg",
     initials: "RK",
     bio: [
       "Raamesh Kotian has over 28 years of experience in Information Technology, Cyber Risk, Data Science, and Business Transformation.",
@@ -24,6 +25,7 @@ const leaders = [
   {
     name: "Amit Patil",
     title: "Co-Founder",
+    image: "/images/team/amit.jpeg",
     initials: "AP",
     bio: [
       "Amit Patil is a cybersecurity leader with 18+ years of experience across banking, financial services, and technology sectors.",
@@ -60,6 +62,7 @@ export function LeadershipSection() {
             >
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">
                 <Avatar className="h-24 w-24 border-2 border-[var(--primary)] shadow-[0_0_15px_var(--primary)]/50 transition-transform group-hover:scale-105">
+                  <AvatarImage src={leader.image} alt={leader.name} />
                   <AvatarFallback className="bg-[var(--primary)]/20 text-[var(--primary)] text-2xl font-bold">
                     {leader.initials}
                   </AvatarFallback>

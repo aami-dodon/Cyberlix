@@ -1,7 +1,10 @@
+
 const quickLinks = ["Overview", "Case Studies", "Careers", "Blog"];
 const services = ["Cloud Ops", "Data Science", "Security", "Product Engineering"];
 const resources = ["Guides", "Events", "Support", "Contact"];
 const legalLinks = ["Privacy", "Terms", "Security"];
+
+import { CynalitxLogo } from "@/components/ui/logo";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -10,7 +13,10 @@ export function Footer() {
     <footer className="mt-auto border-t border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)]">
       <div className="layout-container grid gap-8 px-6 py-12 text-sm md:grid-cols-4">
         <div>
-          <p className="text-lg font-semibold text-[var(--foreground)]">Cynalitx</p>
+          <div className="flex items-center gap-2 mb-3">
+            <CynalitxLogo className="h-6 w-6" />
+            <p className="text-lg font-semibold text-[var(--foreground)]">Cynalitx</p>
+          </div>
           <p className="mt-3 text-xs leading-relaxed">
             We build resilient platforms and teams that keep mission critical systems calm, clear, and trusted.
           </p>
