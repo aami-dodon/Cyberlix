@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { HelperText } from "@/components/ui/helper-text";
 import { Mail, Phone, Loader2 } from "lucide-react";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { useState } from "react";
@@ -112,7 +111,6 @@ export function ContactSection() {
                       variant="glass"
                       size="lg"
                     />
-                    <HelperText>Your full name</HelperText>
                   </div>
                   <div className="space-y-2">
                     <Input
@@ -122,7 +120,6 @@ export function ContactSection() {
                       variant="glass"
                       size="lg"
                     />
-                    <HelperText>Organization name (Optional)</HelperText>
                   </div>
                 </div>
 
@@ -137,7 +134,6 @@ export function ContactSection() {
                       variant="glass"
                       size="lg"
                     />
-                    <HelperText>Work email address preferring</HelperText>
                   </div>
                   <div className="space-y-2">
                     <Input
@@ -148,7 +144,6 @@ export function ContactSection() {
                       variant="glass"
                       size="lg"
                     />
-                    <HelperText>Enter phone number (Optional)</HelperText>
                   </div>
                 </div>
 
@@ -161,7 +156,6 @@ export function ContactSection() {
                     variant="glass"
                     className="min-h-[150px] resize-none p-4"
                   />
-                  <HelperText>Briefly describe your request</HelperText>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">

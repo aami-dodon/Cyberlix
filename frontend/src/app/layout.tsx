@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProviderWrapper } from "./providers/theme-provider";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,6 +75,7 @@ export default function RootLayout({
             <div className="snap-start">
               <Footer />
             </div>
+            <Toaster />
           </div>
         </ThemeProviderWrapper>
       </body>

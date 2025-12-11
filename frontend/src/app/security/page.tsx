@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Security - Cynalitx",
     description: "Security information for Cynalitx",
 };
-
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 export default function SecurityPage() {
     return (

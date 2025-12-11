@@ -120,12 +120,12 @@
   }
 
   html {
-    overscroll-behavior-y: none;
+    overscroll-behavior-y: auto;
   }
 
   .snap-scrolling {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
   }
 
   body {

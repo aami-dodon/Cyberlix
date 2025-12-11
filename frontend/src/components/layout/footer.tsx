@@ -24,6 +24,7 @@ export function Footer() {
   ].filter((link) => link.href);
 
   return (
+
     <footer className="mt-auto border-t border-border bg-card text-muted-foreground">
       <div className="layout-container grid gap-8 px-6 py-12 lg:grid-cols-[70%_30%] lg:gap-12">
         {/* Column 1: Brand */}
@@ -85,12 +86,6 @@ export function Footer() {
               const data = await res.json();
 
               if (res.ok && data.success) {
-                // If using sonner or similar, we might need to import toast.
-                // Since I cannot easily add imports at top with replace_file_content without context of imports block, 
-                // I will use alert for fallback or try to import toast if possible, 
-                // BUT better yet, I should use multi_replace to add the import too.
-                // Assuming I will do multi_replace to add imports.
-                // For now, I will just put the logic here.
                 toast.success("Subscribed successfully!");
                 input.value = "";
               } else {
@@ -106,7 +101,7 @@ export function Footer() {
             <Input
               name="email"
               type="email"
-              placeholder="email@domain.com"
+              placeholder="Email"
               variant="glass"
               className="pr-12"
               required
