@@ -142,7 +142,7 @@ export function Header() {
       <header
         className={cn(
           "pointer-events-auto transition-all duration-500 ease-out flex items-center justify-between",
-          "w-[90vw] max-w-[1200px] rounded-full border shadow-lg py-2 px-4 sm:px-6",
+          "w-[90vw] max-w-[1024px] rounded-full border shadow-lg py-2 px-4 sm:px-6",
           isScrolled
             ? "bg-[var(--background)]/80 backdrop-blur-xl border-[var(--border)]"
             : "bg-[var(--background)]/40 backdrop-blur-md border-[var(--border)]/50"
