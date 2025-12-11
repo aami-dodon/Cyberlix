@@ -4,23 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CynalitxLogo } from "@/components/ui/logo";
 
-import Link from "next/link";
-import { servicesData } from "@/config/services";
-
 const legalLinks = ["Privacy", "Terms", "Security"];
 
 export function Footer() {
   const year = new Date().getFullYear();
 
-  // Split services into two columns
-  const midPoint = Math.ceil(servicesData.length / 2);
-  const leftServices = servicesData.slice(0, midPoint);
-  const rightServices = servicesData.slice(midPoint);
-
   return (
     <footer className="mt-auto border-t border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)]">
-      <div className="layout-container grid gap-8 px-6 py-12 md:grid-cols-3 lg:gap-12">
-        {/* Column 1: Brand (As requested: "Leave as is") */}
+      <div className="layout-container grid gap-8 px-6 py-12 md:grid-cols-2 lg:grid-cols-2 lg:gap-12">
+        {/* Column 1: Brand */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <CynalitxLogo className="h-6 w-6" />
@@ -31,38 +23,7 @@ export function Footer() {
           </p>
         </div>
 
-        {/* Column 2: Services (2 sub-columns with 8 services) */}
-        <div>
-          <p className="text-sm font-semibold text-[var(--foreground)] mb-4">Services</p>
-          <div className="grid grid-cols-2 gap-4">
-            <ul className="flex flex-col gap-2">
-              {leftServices.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-sm text-[var(--sidebar-foreground)] hover:text-[var(--foreground)] transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <ul className="flex flex-col gap-2">
-              {rightServices.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-sm text-[var(--sidebar-foreground)] hover:text-[var(--foreground)] transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Column 3: Subscribe to Newsletter */}
+        {/* Column 2: Newsletter */}
         <div>
           <p className="text-sm font-semibold text-[var(--foreground)] mb-4">Subscribe to Newsletter</p>
           <p className="text-sm mb-4 text-[var(--muted-foreground)]">
@@ -74,7 +35,7 @@ export function Footer() {
               placeholder="Enter your email"
               className="bg-[var(--background)]"
             />
-            <Button type="submit" className="w-full">
+            <Button type="submit" variant="outline" className="w-full">
               Subscribe
             </Button>
           </form>
