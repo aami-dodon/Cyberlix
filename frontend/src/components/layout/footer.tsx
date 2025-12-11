@@ -54,7 +54,11 @@ export function Footer() {
           <span>© {year} Cynalitx. All rights reserved.</span>
           <div className="flex gap-4">
             {legalLinks.map((link) => (
-              <a key={link} href="#" className="text-[var(--sidebar-foreground)] hover:text-[var(--foreground)]">
+              <a
+                key={link}
+                href="#"
+                className="text-[var(--sidebar-foreground)] hover:text-[var(--foreground)]"
+              >
                 {link}
               </a>
             ))}
