@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { HelperText } from "@/components/ui/helper-text";
 import { Mail, Phone, Loader2 } from "lucide-react";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { useState } from "react";
@@ -71,7 +72,7 @@ export function ContactSection() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4 pt-4">
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
+              <Card variant="interactive" className="flex flex-row items-center gap-4 p-4">
                 <div className="bg-primary/10 p-2.5 rounded-xl shrink-0">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
@@ -81,9 +82,9 @@ export function ContactSection() {
                     {supportEmail}
                   </a>
                 </div>
-              </div>
+              </Card>
 
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
+              <Card variant="interactive" className="flex flex-row items-center gap-4 p-4">
                 <div className="bg-primary/10 p-2.5 rounded-xl shrink-0">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
@@ -93,7 +94,7 @@ export function ContactSection() {
                     {supportPhone}
                   </a>
                 </div>
-              </div>
+              </Card>
             </div>
           </FadeInSection>
 
@@ -111,6 +112,7 @@ export function ContactSection() {
                       variant="glass"
                       size="lg"
                     />
+                    <HelperText>Your full name</HelperText>
                   </div>
                   <div className="space-y-2">
                     <Input
@@ -120,6 +122,7 @@ export function ContactSection() {
                       variant="glass"
                       size="lg"
                     />
+                    <HelperText>Organization name (Optional)</HelperText>
                   </div>
                 </div>
 
@@ -134,6 +137,7 @@ export function ContactSection() {
                       variant="glass"
                       size="lg"
                     />
+                    <HelperText>Work email address preferring</HelperText>
                   </div>
                   <div className="space-y-2">
                     <Input
@@ -144,6 +148,7 @@ export function ContactSection() {
                       variant="glass"
                       size="lg"
                     />
+                    <HelperText>Enter phone number (Optional)</HelperText>
                   </div>
                 </div>
 
@@ -156,6 +161,7 @@ export function ContactSection() {
                     variant="glass"
                     className="min-h-[150px] resize-none p-4"
                   />
+                  <HelperText>Briefly describe your request</HelperText>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">

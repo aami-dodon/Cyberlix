@@ -13,9 +13,9 @@ export const leadershipData = [
             "Raamesh is passionate about helping organizations in building and transforming their risk functions using technology and managing cyber security risk proactively. He mentors and coaches' leaders, students and risk professionals at workplace and outside. Ramesh has spoken in multiple forums including RSA Asia Security Conference and DSCI Annual conference."
         ],
         socials: {
-            linkedin: "#",
-            twitter: "#",
-            email: "mailto:contact@cynalitx.com",
+            linkedin: process.env.NEXT_PUBLIC_RAAMESH_LINKEDIN || "#",
+            twitter: process.env.NEXT_PUBLIC_RAAMESH_TWITTER || "#",
+            email: process.env.NEXT_PUBLIC_RAAMESH_EMAIL || "mailto:contact@cynalitx.com",
         },
     },
     {
@@ -33,9 +33,9 @@ export const leadershipData = [
             "Amit is known for his practical, risk-based approach and focus on aligning security with business growth."
         ],
         socials: {
-            linkedin: "#",
-            twitter: "#",
-            email: "mailto:contact@cynalitx.com",
+            linkedin: process.env.NEXT_PUBLIC_AMIT_LINKEDIN || "#",
+            twitter: process.env.NEXT_PUBLIC_AMIT_TWITTER || "#",
+            email: process.env.NEXT_PUBLIC_AMIT_EMAIL || "mailto:contact@cynalitx.com",
         },
     },
 ];

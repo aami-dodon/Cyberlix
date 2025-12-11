@@ -7,7 +7,11 @@ import { ArrowRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react
 import Link from "next/link";
 import { toast } from "sonner";
 
-const legalLinks = ["Privacy", "Terms", "Security"];
+const legalLinks = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Security", href: "/security" },
+];
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -104,7 +108,7 @@ export function Footer() {
               type="email"
               placeholder="email@domain.com"
               variant="glass"
-              className="pr-12 bg-background"
+              className="pr-12"
               required
             />
             <Button
@@ -126,11 +130,11 @@ export function Footer() {
           <div className="flex gap-4">
             {legalLinks.map((link) => (
               <Link
-                key={link}
-                href="/coming-soon"
+                key={link.label}
+                href={link.href}
                 className="text-sidebar-foreground hover:text-foreground"
               >
-                {link}
+                {link.label}
               </Link>
             ))}
           </div>

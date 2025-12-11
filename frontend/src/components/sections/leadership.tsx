@@ -79,6 +79,7 @@ export function LeadershipSection() {
                   <Link href={`/leadership/${leader.slug}`}>
                     <Button
                       variant="glow"
+                      size="lg"
                       className="w-full sm:w-auto group/btn"
                     >
                       View Profile
