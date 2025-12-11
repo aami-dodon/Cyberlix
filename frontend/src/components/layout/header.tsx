@@ -97,7 +97,7 @@ function MobileMenu() {
               className="w-full rounded-full font-semibold shadow-[0_0_15px_-3px_var(--primary)] hover:shadow-[0_0_20px_-3px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
               size="default"
             >
-              <Link href="/coming-soon">DEMO</Link>
+              <Link href="/coming-soon">Live Demo</Link>
             </Button>
           </div>
         </SheetFooter>
@@ -160,7 +160,7 @@ export function Header() {
               className="rounded-full font-semibold shadow-[0_0_15px_-3px_var(--primary)] hover:shadow-[0_0_20px_-3px_var(--primary)] transition-all duration-300 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90 border border-[var(--primary)]/50"
               size="default"
             >
-              <Link href="/coming-soon">DEMO</Link>
+              <Link href="/coming-soon">Live Demo</Link>
             </Button>
           </div>
           <MobileMenu />
