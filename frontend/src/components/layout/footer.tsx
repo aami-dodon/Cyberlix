@@ -4,16 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CynalitxLogo } from "@/components/ui/logo";
 
-const services = [
-  "vCISO Services",
-  "Security Assessment",
-  "Cloud Security",
-  "Managed SOC",
-  "Penetration Testing",
-  "Incident Response",
-  "Compliance Audits",
-  "Identity Management",
-];
+import Link from "next/link";
+import { servicesData } from "@/config/services";
 
 const legalLinks = ["Privacy", "Terms", "Security"];
 
@@ -21,9 +13,9 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   // Split services into two columns
-  const midPoint = Math.ceil(services.length / 2);
-  const leftServices = services.slice(0, midPoint);
-  const rightServices = services.slice(midPoint);
+  const midPoint = Math.ceil(servicesData.length / 2);
+  const leftServices = servicesData.slice(0, midPoint);
+  const rightServices = servicesData.slice(midPoint);
 
   return (
     <footer className="mt-auto border-t border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)]">
@@ -44,20 +36,26 @@ export function Footer() {
           <p className="text-sm font-semibold text-[var(--foreground)] mb-4">Services</p>
           <div className="grid grid-cols-2 gap-4">
             <ul className="flex flex-col gap-2">
-              {leftServices.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm text-[var(--sidebar-foreground)] hover:text-[var(--foreground)] transition-colors">
-                    {item}
-                  </a>
+              {leftServices.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-sm text-[var(--sidebar-foreground)] hover:text-[var(--foreground)] transition-colors"
+                  >
+                    {service.title}
+                  </Link>
                 </li>
               ))}
             </ul>
             <ul className="flex flex-col gap-2">
-              {rightServices.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm text-[var(--sidebar-foreground)] hover:text-[var(--foreground)] transition-colors">
-                    {item}
-                  </a>
+              {rightServices.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-sm text-[var(--sidebar-foreground)] hover:text-[var(--foreground)] transition-colors"
+                  >
+                    {service.title}
+                  </Link>
                 </li>
               ))}
             </ul>

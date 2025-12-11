@@ -1,16 +1,21 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { servicesData } from "@/config/services";
 import Link from "next/link";
-import { ServicesSection } from "@/components/sections/services";
 
 export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-[var(--background)] pt-32 pb-20">
             <div className="layout-container">
                 <FadeInSection>
+                    <Link
+                        href="/"
+                        className="inline-flex items-center text-sm text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors mb-6"
+                    >
+                        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home Page
+                    </Link>
                     <div className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
                             Our Services
