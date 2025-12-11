@@ -113,13 +113,16 @@
 }
 
 
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   .sr-only {
     position: absolute;
     width: 1px;
@@ -131,6 +134,7 @@
     white-space: nowrap;
     border: 0;
   }
+
   .layout-container {
     width: min(1200px, 90vw);
     margin: 0 auto;

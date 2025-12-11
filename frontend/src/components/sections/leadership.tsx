@@ -29,34 +29,47 @@ const leaders = [
 
 export function LeadershipSection() {
   return (
-    <section className="bg-[var(--card)]/95 p-10">
-      <p className="text-xs uppercase tracking-[0.4em] text-[var(--sidebar-foreground)]/60">
-        Leadership
-      </p>
-      <h2 className="mt-2 text-3xl font-semibold text-[var(--foreground)]">
-        Leadership
-      </h2>
-      <div className="mt-6 flex flex-col gap-6 text-[var(--sidebar-foreground)]">
-        {leaders.map((leader) => (
-          <article key={leader.name} className="space-y-3 border-t border-[var(--border)] pt-6">
-            <div className="flex items-center gap-4">
-              <Avatar className="border border-[var(--border)]">
-                <AvatarFallback>{leader.initials}</AvatarFallback>
-              </Avatar>
-              <div className="flex flex-col gap-1">
-                <p className="text-lg font-semibold text-[var(--foreground)]">{leader.name}</p>
-                <p className="text-xs uppercase tracking-[0.4em] text-[var(--sidebar-foreground)]/70">
-                  {leader.title}
-                </p>
+    <section className="relative bg-[var(--background)] py-20">
+      <div className="layout-container space-y-12">
+        <div className="text-center space-y-4">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--secondary)]">
+            Leadership
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)]">
+            Visionaries behind the shield
+          </h2>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2">
+          {leaders.map((leader) => (
+            <article
+              key={leader.name}
+              className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 transition-all hover:border-[var(--primary)]/50 hover:shadow-[0_0_30px_-5px_var(--primary)]/20"
+            >
+              <div className="flex items-start gap-6 mb-6">
+                <Avatar className="h-20 w-20 border-2 border-[var(--primary)] shadow-[0_0_15px_var(--primary)]/50 transition-transform group-hover:scale-105">
+                  <AvatarFallback className="bg-[var(--primary)]/20 text-[var(--primary)] text-xl font-bold">
+                    {leader.initials}
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <h3 className="text-2xl font-bold text-[var(--foreground)]">{leader.name}</h3>
+                  <p className="text-sm font-medium uppercase tracking-widest text-[var(--secondary)] mt-1">
+                    {leader.title}
+                  </p>
+                </div>
               </div>
-            </div>
-            {leader.bio.map((line) => (
-              <p key={line} className="text-sm leading-relaxed">
-                {line}
-              </p>
-            ))}
-          </article>
-        ))}
+
+              <div className="space-y-4 text-[var(--muted-foreground)]">
+                {leader.bio.map((line) => (
+                  <p key={line} className="text-base leading-relaxed">
+                    {line}
+                  </p>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

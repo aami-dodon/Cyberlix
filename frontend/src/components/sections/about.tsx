@@ -1,17 +1,27 @@
 export function AboutSection() {
   return (
-    <section className="bg-[var(--card)]/90 p-10">
-      <p className="text-xs uppercase tracking-[0.4em] text-[var(--sidebar-foreground)]/60">
-        About Cynalitx
-      </p>
-      <h2 className="mt-4 text-3xl font-semibold text-[var(--foreground)]">
-        Full-spectrum security leadership
-      </h2>
-      <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--sidebar-foreground)]/85">
-        Cynalitx is a full-spectrum cybersecurity partner offering strategic leadership, cloud and data protection,
-        compliance advisory, advanced threat monitoring, and enterprise-grade security operations. We help
-        organizations strengthen resilience, reduce cyber risks, and align security with business growth.
-      </p>
+    <section className="relative overflow-hidden bg-[var(--background)] py-20">
+      {/* Background Decor */}
+      <div className="absolute left-0 bottom-0 h-96 w-96 translate-y-1/2 -translate-x-1/4 bg-[var(--primary)]/10 blur-[120px] rounded-full" />
+
+      <div className="layout-container relative z-10 grid gap-12 md:grid-cols-2 items-center">
+        <div className="space-y-6">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--secondary)]">
+            About Cynalitx
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight text-[var(--foreground)]">
+            Full-spectrum <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]">security leadership</span>
+          </h2>
+        </div>
+
+        <div>
+          <p className="text-lg md:text-xl leading-relaxed text-[var(--muted-foreground)]">
+            Cynalitx is a full-spectrum cybersecurity partner offering strategic leadership, cloud and data protection,
+            compliance advisory, advanced threat monitoring, and enterprise-grade security operations. We help
+            organizations strengthen resilience, reduce cyber risks, and align security with business growth.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

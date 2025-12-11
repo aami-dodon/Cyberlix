@@ -1,5 +1,7 @@
 "use client";
 
+import { Shield, BarChart3, Cloud, Database, FileCheck, MonitorPlay, Crosshair, Users } from "lucide-react";
+
 const services = [
   {
     title: "vCISO & Information Security Leadership",
@@ -14,6 +16,7 @@ const services = [
       "Periodic review and updates of security practices",
       "Strategic reporting for stakeholders",
     ],
+    icon: Shield,
   },
   {
     title: "Cyber Security Maturity Assessment",
@@ -26,6 +29,7 @@ const services = [
       "Assist in roadmap implementation",
       "Continuous assessment to measure progress",
     ],
+    icon: BarChart3,
   },
   {
     title: "Cloud Security",
@@ -39,6 +43,7 @@ const services = [
       "Compliance with cloud security standards",
       "Continuous cloud monitoring",
     ],
+    icon: Cloud,
   },
   {
     title: "Data Security",
@@ -52,6 +57,7 @@ const services = [
       "Data encryption policies",
       "Email and internet security controls",
     ],
+    icon: Database,
   },
   {
     title: "Governance, Risk & Compliance (GRC)",
@@ -66,6 +72,7 @@ const services = [
       "Cybersecurity governance frameworks",
       "Security awareness programs & simulations",
     ],
+    icon: FileCheck,
   },
   {
     title: "Managed Security Operations Center (SOC)",
@@ -80,6 +87,7 @@ const services = [
       "Flexible billing (per device, not EPS)",
       "24×7×365 SLA-backed operations",
     ],
+    icon: MonitorPlay,
   },
   {
     title: "Vulnerability Assessment & Penetration Testing (VAPT)",
@@ -96,6 +104,7 @@ const services = [
       "Mobile app, API, AI, CI/CD assessments",
       "Actionable insights for defense improvement",
     ],
+    icon: Crosshair,
   },
   {
     title: "Cyber Warriors On-Premises",
@@ -110,30 +119,60 @@ const services = [
       "Custom security solutions",
       "Skill enhancement programs for internal teams",
     ],
+    icon: Users,
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section className="bg-[var(--card)]/95 p-10">
-      <p className="text-xs uppercase tracking-[0.4em] text-[var(--sidebar-foreground)]/60">
-        Services
-      </p>
-      <h2 className="mt-2 text-3xl font-semibold text-[var(--foreground)]">
-        Services designed for every risk profile
-      </h2>
-      <div className="mt-8 grid gap-6 text-sm text-[var(--sidebar-foreground)] md:grid-cols-2">
-        {services.map((service) => (
-          <article key={service.title} className="space-y-3 bg-[var(--card)]/90 p-6">
-            <h3 className="text-lg font-semibold text-[var(--foreground)]">{service.title}</h3>
-            <p className="text-sm leading-relaxed">{service.description}</p>
-            <ul className="list-disc pl-5 text-[var(--sidebar-foreground)]/80">
-              {service.highlights.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
+    <section className="relative bg-[var(--background)] py-20 overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute right-0 top-1/4 h-1/2 w-1/3 bg-[var(--primary)]/5 blur-[120px]" />
+
+      <div className="layout-container relative z-10">
+        <div className="space-y-4 mb-12">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--secondary)]">
+            Services
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)]">
+            Services designed for every risk profile
+          </h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className="group relative overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--card)] p-8 transition-all duration-300 hover:border-[var(--primary)]/50 hover:shadow-[0_0_30px_-5px_var(--primary)]/30 hover:-translate-y-1"
+            >
+              <div className="relative z-10 space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0 rounded-lg bg-[var(--primary)]/10 p-3 text-[var(--primary)] ring-1 ring-[var(--primary)]/20 transition-colors group-hover:bg-[var(--primary)]/20 group-hover:text-[var(--primary)]">
+                    <service.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="text-base leading-relaxed text-[var(--muted-foreground)]">
+                  {service.description}
+                </p>
+
+                <div className="pt-4">
+                  <ul className="space-y-2">
+                    {service.highlights.map((point) => (
+                      <li key={point} className="flex items-start gap-2 text-sm text-[var(--muted-foreground)]/90">
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[var(--secondary)] flex-shrink-0" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
