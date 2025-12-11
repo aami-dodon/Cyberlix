@@ -1,4 +1,3 @@
-npx shadcn@latest add button card input textarea label form select checkbox radio-group switch toast progress alert dialog popover tooltip drawer dropdown-menu navbar table skeleton tabs accordion scroll-area avatar badge separator toggle breadcrumb
 "use client"
 
 import * as React from "react"
