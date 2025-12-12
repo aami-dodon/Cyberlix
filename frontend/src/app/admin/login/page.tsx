@@ -1,14 +1,14 @@
-
 'use client'
 
-import { useActionState, Suspense } from 'react'
+import { useActionState } from 'react'
 import { login } from '@/app/actions/auth'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
-import { Lock } from 'lucide-react'
+import { CynalitxLogo } from '@/components/ui/logo'
 import { useSearchParams } from 'next/navigation'
+import { motion } from 'framer-motion'
+import { Suspense } from 'react'
 
 function LoginForm() {
     const searchParams = useSearchParams();
@@ -18,53 +18,89 @@ function LoginForm() {
     const [state, formAction, isPending] = useActionState(login, null);
 
     return (
-        <Card className="w-full max-w-md">
-            <CardHeader className="space-y-1">
-                <div className="flex justify-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                        <Lock className="h-6 w-6 text-primary" />
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full"
+        >
+            <div className="relative overflow-hidden rounded-2xl border bg-background/50 backdrop-blur-xl shadow-2xl">
+                {/* Decorative gradients */}
+                <div className="absolute -top-24 -left-24 h-48 w-48 rounded-full bg-primary/20 blur-3xl" />
+                <div className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-primary/20 blur-3xl" />
+
+                <div className="relative p-8 space-y-8">
+                    <div className="flex flex-col items-center space-y-4 text-center">
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.2, duration: 0.4 }}
+                            className="bg-primary/10 p-4 rounded-full ring-1 ring-primary/20 shadow-lg mb-2"
+                        >
+                            <CynalitxLogo className="h-10 w-10 text-primary" />
+                        </motion.div>
+                        <div className="space-y-2">
+                            <h1 className="text-2xl font-bold tracking-tight">Welcome Back</h1>
+                            <p className="text-sm text-muted-foreground">
+                                Sign in to access the admin dashboard
+                            </p>
+                        </div>
+                    </div>
+
+                    <form action={formAction} className="space-y-6">
+                        <input type="hidden" name="redirectTo" value={redirectTo} />
+
+                        <div className="space-y-2">
+                            <Label htmlFor="password">Password</Label>
+                            <Input
+                                id="password"
+                                name="password"
+                                type="password"
+                                placeholder="••••••••"
+                                required
+                                className="bg-background/50 border-muted-foreground/20 focus:border-primary/50 transition-all duration-300"
+                            />
+                        </div>
+
+                        {state?.error && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                className="text-sm font-medium text-destructive text-center bg-destructive/10 p-3 rounded-lg border border-destructive/20"
+                            >
+                                {state.error}
+                            </motion.div>
+                        )}
+
+                        <Button
+                            type="submit"
+                            className="w-full h-11 text-base font-medium shadow-lg hover:shadow-primary/25 transition-all duration-300"
+                            disabled={isPending}
+                        >
+                            {isPending ? (
+                                <div className="flex items-center gap-2">
+                                    <div className="h-4 w-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                                    <span>Authenticating...</span>
+                                </div>
+                            ) : (
+                                'Sign In'
+                            )}
+                        </Button>
+                    </form>
+
+                    <div className="text-center text-xs text-muted-foreground">
+                        <p>Restricted access for authorized personnel only.</p>
                     </div>
                 </div>
-                <CardTitle className="text-2xl font-bold text-center">Admin Access</CardTitle>
-                <CardDescription className="text-center">
-                    Enter your password to access the dashboard
-                </CardDescription>
-            </CardHeader>
-            <form action={formAction}>
-                <input type="hidden" name="redirectTo" value={redirectTo} />
-                <CardContent className="space-y-4">
-                    <div className="space-y-2">
-                        <Label htmlFor="password">Password</Label>
-                        <Input
-                            id="password"
-                            name="password"
-                            type="password"
-                            placeholder="••••••••"
-                            required
-                        />
-                    </div>
-                    {state?.error && (
-                        <div className="text-sm font-medium text-destructive text-center">
-                            {state.error}
-                        </div>
-                    )}
-                </CardContent>
-                <CardFooter>
-                    <Button type="submit" className="w-full" disabled={isPending}>
-                        {isPending ? 'Authenticating...' : 'Login'}
-                    </Button>
-                </CardFooter>
-            </form>
-        </Card>
+            </div>
+        </motion.div>
     )
 }
 
 export default function AdminLoginPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-muted/20 p-4">
-            <Suspense fallback={<div>Loading...</div>}>
-                <LoginForm />
-            </Suspense>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+            <LoginForm />
+        </Suspense>
     )
 }
