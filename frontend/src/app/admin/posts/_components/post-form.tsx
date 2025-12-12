@@ -14,10 +14,10 @@ import Link from 'next/link'
 import { format } from 'date-fns'
 import { Calendar } from '@/components/ui/calendar'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { Checkbox } from '@/components/ui/checkbox'
 import { cn } from '@/lib/utils'
 
 import RichTextEditor from './rich-text-editor'
-
 import leadershipData from '@/content/leadership.json'
 
 interface PostFormProps {
@@ -31,6 +31,7 @@ interface PostFormProps {
         readTime: string
         date: string
         imageUrl: string | null
+        featured: boolean
     }
 }
 
@@ -52,6 +53,7 @@ export default function PostForm({ post }: PostFormProps) {
         post?.date ? new Date(post.date) : undefined
     )
     const [content, setContent] = useState(post?.content || '')
+    const [featured, setFeatured] = useState(post?.featured || false)
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -63,6 +65,8 @@ export default function PostForm({ post }: PostFormProps) {
             const dateString = format(date, 'MMMM d, yyyy')
             formData.set('date', dateString)
         }
+
+        formData.set('featured', featured.toString())
 
         try {
             if (isEditing) {
@@ -114,6 +118,17 @@ export default function PostForm({ post }: PostFormProps) {
                                     </SelectContent>
                                 </Select>
                             </div>
+                        </div>
+
+                        <div className="flex items-center space-x-2">
+                            <Checkbox
+                                id="featured"
+                                checked={featured}
+                                onCheckedChange={(checked) => setFeatured(checked as boolean)}
+                            />
+                            <Label htmlFor="featured" className="font-medium cursor-pointer">
+                                Featured Post (Pin to top)
+                            </Label>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
