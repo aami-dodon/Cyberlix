@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
     params: Promise<{ id: string }>;
 }

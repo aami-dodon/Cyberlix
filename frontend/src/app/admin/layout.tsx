@@ -4,6 +4,8 @@ import { logout } from '@/app/actions/auth'
 import Link from 'next/link'
 import { LayoutDashboard, FileText, LogOut } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
+
 export default function AdminLayout({
     children,
 }: {
