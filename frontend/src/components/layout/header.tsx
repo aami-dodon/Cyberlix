@@ -21,10 +21,10 @@ import {
 } from "@/components/ui/sheet";
 
 const navItems = [
-  { name: "About", href: "/#about" },
   { name: "Services", href: "/#services" },
   { name: "Why Cynalitx", href: "/#why-cynalitx" },
   { name: "Leadership", href: "/#leadership" },
+  { name: "Insights", href: "/insights" },
   { name: "Contact", href: "/#contact" },
 ];
 
