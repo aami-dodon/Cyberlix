@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -102,8 +102,27 @@ function MobileMenu() {
 import { CynalitxLogo } from "@/components/ui/logo";
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 8);
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 py-4 bg-background/80 backdrop-blur-xl border-b border-border/40">
+    <div
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 py-4 transition-colors duration-300",
+        isScrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/40"
+          : "bg-transparent border-b border-transparent"
+      )}
+    >
       <header className="layout-container flex items-center justify-between relative">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50 shrink-0">
