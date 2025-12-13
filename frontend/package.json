@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "db:migrate": "dotenv -e ../.env -- prisma migrate deploy",
+    "db:generate": "dotenv -e ../.env -- prisma generate",
+    "db:migrate": "dotenv -e ../.env -- prisma migrate deploy && npm run db:generate",
     "db:push": "dotenv -e ../.env -- prisma db push",
     "dev": "npm run db:migrate && dotenv -e ../.env -- next dev",
     "build": "dotenv -e ../.env -- next build",

@@ -11,6 +11,7 @@ import homeContent from "@/content/home.json";
 
 type FeaturedPost = {
   id: string;
+  slug?: string | null;
   title: string;
   excerpt: string;
   date: string;
@@ -98,7 +99,7 @@ export function FeaturedInsightsSectionClient({ posts }: { posts: FeaturedPost[]
                     </div>
 
                     <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                      <Link href={`/insights/${post.id}`}>{post.title}</Link>
+                      <Link href={`/insights/${post.slug ?? post.id}`}>{post.title}</Link>
                     </CardTitle>
 
                     <CardDescription className="line-clamp-3">{post.excerpt}</CardDescription>
@@ -107,7 +108,7 @@ export function FeaturedInsightsSectionClient({ posts }: { posts: FeaturedPost[]
                   <CardFooter className="mt-auto">
                     <Button variant="link" asChild className="p-0 h-auto font-semibold">
                       <Link
-                        href={`/insights/${post.id}`}
+                        href={`/insights/${post.slug ?? post.id}`}
                         className="flex items-center gap-1 group-hover:translate-x-1 transition-transform"
                       >
                         Read Article <ArrowRight className="h-4 w-4" />
@@ -123,4 +124,3 @@ export function FeaturedInsightsSectionClient({ posts }: { posts: FeaturedPost[]
     </section>
   );
 }
-

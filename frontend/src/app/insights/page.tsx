@@ -2,7 +2,8 @@
 import React from "react";
 import prisma from "@/lib/db";
 import { InsightsList } from "./insights-list";
-import { BlogPost, categories } from "@/lib/blog-data";
+import { BlogPost } from "@/lib/blog-data";
+import { ensurePostSlug } from "@/lib/slug";
 
 export const dynamic = "force-dynamic";
 
@@ -11,9 +12,24 @@ export default async function InsightsPage() {
         orderBy: { date: 'desc' }
     });
 
-    const formattedPosts = posts.map((post: any) => ({
-        ...post,
-        category: post.category as BlogPost['category'] // Type assertion since DB stores string
+    type DbPost = typeof posts[number];
+    const postsWithSlugs: Array<DbPost & { slug: string }> = [];
+    for (const post of posts) {
+        const slug = post.slug ?? (await ensurePostSlug(prisma, { id: post.id, title: post.title, slug: post.slug }));
+        postsWithSlugs.push({ ...post, slug });
+    }
+
+    const formattedPosts: BlogPost[] = postsWithSlugs.map((post) => ({
+        id: post.id,
+        slug: post.slug,
+        title: post.title,
+        excerpt: post.excerpt,
+        content: post.content ?? undefined,
+        date: post.date,
+        author: post.author,
+        category: post.category as BlogPost['category'],
+        readTime: post.readTime,
+        imageUrl: post.imageUrl ?? undefined,
     }));
 
     return (

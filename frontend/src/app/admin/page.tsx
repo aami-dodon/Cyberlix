@@ -51,7 +51,7 @@ export default async function AdminDashboard() {
                                     <TableCell className="text-right">
                                         <div className="flex items-center justify-end gap-2">
                                             <Button variant="ghost" size="icon" asChild title="View">
-                                                <Link href={`/insights/${post.id}`} target="_blank">
+                                                <Link href={`/insights/${post.slug ?? post.id}`} target="_blank">
                                                     <ExternalLink className="h-4 w-4" />
                                                 </Link>
                                             </Button>

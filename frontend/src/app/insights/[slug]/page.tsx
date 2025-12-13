@@ -1,8 +1,10 @@
 
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import prisma from "@/lib/db";
+import { ensurePostSlug } from "@/lib/slug";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
@@ -10,13 +12,61 @@ import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 export const dynamic = "force-dynamic";
 
 interface PageProps {
-    params: Promise<{ id: string }>;
+    params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const normalized = slug.toLowerCase();
+
+    const post = await prisma.post.findFirst({
+        where: { slug: normalized },
+        select: {
+            title: true,
+            excerpt: true,
+            imageUrl: true,
+            slug: true,
+        },
+    });
+
+    if (!post || !post.slug) return {};
+
+    return {
+        title: post.title,
+        description: post.excerpt,
+        alternates: {
+            canonical: `/insights/${post.slug}`,
+        },
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            url: `/insights/${post.slug}`,
+            type: "article",
+            images: post.imageUrl ? [{ url: post.imageUrl }] : undefined,
+        },
+    };
 }
 
 export default async function InsightsPostPage({ params }: PageProps) {
-    const { id } = await params;
-    const post = await prisma.post.findUnique({
-        where: { id },
+    const { slug } = await params;
+
+    const postById = await prisma.post.findUnique({
+        where: { id: slug },
+    });
+
+    if (postById) {
+        const canonicalSlug = await ensurePostSlug(prisma, {
+            id: postById.id,
+            title: postById.title,
+            slug: postById.slug,
+        });
+
+        permanentRedirect(`/insights/${canonicalSlug}`);
+    }
+
+    const normalized = slug.toLowerCase();
+    const post = await prisma.post.findFirst({
+        where: { slug: normalized },
     });
 
     if (!post) {
@@ -91,12 +141,12 @@ export default async function InsightsPostPage({ params }: PageProps) {
                                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                                     cupidatat non proident, sunt in culpa qui officia deserunt
                                     mollit anim id est laborum.
-                                </p>
-                                <blockquote>
-                                    "Security is a process, not a product." - Bruce Schneier
-                                </blockquote>
-                                <h2>The Solution</h2>
-                                <p>
+	                                </p>
+	                                <blockquote>
+	                                    &quot;Security is a process, not a product.&quot; - Bruce Schneier
+	                                </blockquote>
+	                                <h2>The Solution</h2>
+	                                <p>
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                                     accusantium doloremque laudantium, totam rem aperiam, eaque
                                     ipsa quae ab illo inventore veritatis et quasi architecto.

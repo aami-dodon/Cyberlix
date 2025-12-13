@@ -4,7 +4,7 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-export async function login(prevState: any, formData: FormData) {
+export async function login(_prevState: unknown, formData: FormData) {
     const password = formData.get('password') as string
     const redirectTo = formData.get('redirectTo') as string || '/admin'
     const adminPassword = process.env.ADMIN_PASSWORD

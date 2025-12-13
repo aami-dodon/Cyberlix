@@ -2,10 +2,18 @@
 'use server'
 
 import prisma from '@/lib/db'
+import type { Prisma } from '@prisma/client'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { writeFile, mkdir } from 'fs/promises'
 import path from 'path'
+import { createUniquePostSlug } from '@/lib/slug'
+
+function isUniqueConstraintError(error: unknown): boolean {
+    if (!error || typeof error !== 'object') return false
+    if (!('code' in error)) return false
+    return (error as { code?: unknown }).code === 'P2002'
+}
 
 export async function createPost(formData: FormData) {
     const title = formData.get('title') as string
@@ -39,19 +47,35 @@ export async function createPost(formData: FormData) {
 
     const featured = formData.get('featured') === 'true'
 
-    await prisma.post.create({
-        data: {
-            title,
-            content,
-            excerpt,
-            category,
-            author,
-            readTime,
-            date,
-            imageUrl: imageUrl || null,
-            featured,
-        },
-    })
+    let createdSlug: string | null = null
+    for (let attempt = 0; attempt < 5; attempt += 1) {
+        const slug = await createUniquePostSlug(prisma, title)
+        try {
+            await prisma.post.create({
+                data: {
+                    slug,
+                    title,
+                    content,
+                    excerpt,
+                    category,
+                    author,
+                    readTime,
+                    date,
+                    imageUrl: imageUrl || null,
+                    featured,
+                },
+            })
+            createdSlug = slug
+            break
+        } catch (error: unknown) {
+            if (isUniqueConstraintError(error)) continue
+            throw error
+        }
+    }
+
+    if (!createdSlug) {
+        throw new Error('Failed to create post slug')
+    }
 
     revalidatePath('/admin')
     revalidatePath('/insights')
@@ -59,6 +83,15 @@ export async function createPost(formData: FormData) {
 }
 
 export async function updatePost(id: string, formData: FormData) {
+    const existing = await prisma.post.findUnique({
+        where: { id },
+        select: { title: true, slug: true }
+    })
+
+    if (!existing) {
+        throw new Error('Post not found')
+    }
+
     const title = formData.get('title') as string
     const content = formData.get('content') as string
     const excerpt = formData.get('excerpt') as string
@@ -73,7 +106,7 @@ export async function updatePost(id: string, formData: FormData) {
     const date = formData.get('date') as string
     const imageFile = formData.get('image') as File | null
 
-    const updateData: any = {
+    const updateData: Prisma.PostUpdateInput = {
         title,
         content,
         excerpt,
@@ -91,14 +124,36 @@ export async function updatePost(id: string, formData: FormData) {
         updateData.featured = formData.get('featured') === 'true'
     }
 
-    await prisma.post.update({
-        where: { id },
-        data: updateData,
-    })
+    let finalSlug = existing.slug
+
+    if (!existing.slug || existing.title !== title) {
+        for (let attempt = 0; attempt < 5; attempt += 1) {
+            const nextSlug = await createUniquePostSlug(prisma, title, id)
+            try {
+                await prisma.post.update({
+                    where: { id },
+                    data: { ...updateData, slug: nextSlug },
+                })
+                finalSlug = nextSlug
+                break
+            } catch (error: unknown) {
+                if (isUniqueConstraintError(error)) continue
+                throw error
+            }
+        }
+    } else {
+        await prisma.post.update({
+            where: { id },
+            data: updateData,
+        })
+    }
 
     revalidatePath('/admin')
     revalidatePath('/insights')
     revalidatePath(`/insights/${id}`)
+    if (finalSlug) {
+        revalidatePath(`/insights/${finalSlug}`)
+    }
     redirect('/admin')
 }
 

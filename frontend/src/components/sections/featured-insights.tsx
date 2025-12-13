@@ -1,6 +1,7 @@
 import prisma from "@/lib/db";
 import { unstable_noStore as noStore } from "next/cache";
 import { FeaturedInsightsSectionClient } from "./featured-insights.client";
+import { ensurePostSlug } from "@/lib/slug";
 
 export async function FeaturedInsightsSection() {
   noStore();
@@ -11,6 +12,7 @@ export async function FeaturedInsightsSection() {
     take: 3,
     select: {
       id: true,
+      slug: true,
       title: true,
       excerpt: true,
       date: true,
@@ -21,6 +23,12 @@ export async function FeaturedInsightsSection() {
     },
   });
 
-  return <FeaturedInsightsSectionClient posts={featuredPosts} />;
-}
+  const featuredPostsWithSlugs = await Promise.all(
+    featuredPosts.map(async (post) => ({
+      ...post,
+      slug: post.slug ?? (await ensurePostSlug(prisma, { id: post.id, title: post.title, slug: post.slug })),
+    }))
+  );
 
+  return <FeaturedInsightsSectionClient posts={featuredPostsWithSlugs} />;
+}
