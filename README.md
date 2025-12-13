@@ -74,12 +74,12 @@ Cynalitx features a built-in content management system (CMS) for "Insights" (Blo
 1.  Navigate to `/admin` (e.g., `http://localhost:3000/admin`).
 2.  Login with your administrator credentials.
 
-![Admin Login](public/docs/admin-login.png)
+![Admin Login](frontend/public/docs/admin-login.png)
 
 ### Admin Dashboard
 Once logged in, you will see the Dashboard, which lists all existing posts.
 
-![Admin Dashboard](public/docs/admin-dashboard.png)
+![Admin Dashboard](frontend/public/docs/admin-dashboard.png)
 
 ### Creating a New Insight
 1.  Click the **"Create Post"** button on the top right of the Dashboard.
