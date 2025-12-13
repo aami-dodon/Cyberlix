@@ -114,7 +114,9 @@ export async function deletePost(id: string) {
 async function uploadImage(file: File): Promise<string> {
     const buffer = Buffer.from(await file.arrayBuffer())
     const filename = `${Date.now()}-${file.name.replaceAll(' ', '_')}`
-    const uploadDir = path.join(process.cwd(), 'public/uploads')
+    const uploadDir = process.env.UPLOADS_DIR
+        ? path.resolve(process.env.UPLOADS_DIR)
+        : path.join(process.cwd(), '.data/uploads')
 
     try {
         await mkdir(uploadDir, { recursive: true })

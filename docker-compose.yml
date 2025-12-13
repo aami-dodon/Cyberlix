@@ -9,4 +9,10 @@ services:
       PORT: ${PORT:-3000}
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
+    volumes:
+      # Persist uploaded images (stored outside git-tracked folders)
+      - frontend_uploads:/app/frontend/.data/uploads
     restart: unless-stopped
+
+volumes:
+  frontend_uploads:
