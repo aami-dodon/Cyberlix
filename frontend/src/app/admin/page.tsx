@@ -34,7 +34,7 @@ export default async function AdminDashboard() {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead>Title</TableHead>
+                                <TableHead className="whitespace-normal">Title</TableHead>
                                 <TableHead>Category</TableHead>
                                 <TableHead>Author</TableHead>
                                 <TableHead>Date</TableHead>
@@ -44,7 +44,7 @@ export default async function AdminDashboard() {
                         <TableBody>
                             {posts.map((post) => (
                                 <TableRow key={post.id}>
-                                    <TableCell className="font-medium">{post.title}</TableCell>
+                                    <TableCell className="font-medium whitespace-normal break-words">{post.title}</TableCell>
                                     <TableCell>{post.category}</TableCell>
                                     <TableCell>{post.author}</TableCell>
                                     <TableCell>{post.date}</TableCell>

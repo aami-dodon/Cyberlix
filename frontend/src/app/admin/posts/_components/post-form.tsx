@@ -55,6 +55,12 @@ export default function PostForm({ post }: PostFormProps) {
     const [content, setContent] = useState(post?.content || '')
     const [featured, setFeatured] = useState(post?.featured || false)
 
+    function isNextRedirectError(error: unknown): boolean {
+        if (!error || typeof error !== 'object') return false
+        const digest = (error as { digest?: unknown }).digest
+        return typeof digest === 'string' && digest.includes('NEXT_REDIRECT')
+    }
+
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
         setIsSubmitting(true)
@@ -75,6 +81,9 @@ export default function PostForm({ post }: PostFormProps) {
                 await createPost(formData)
             }
         } catch (error) {
+            if (isNextRedirectError(error)) {
+                throw error
+            }
             console.error('Error saving post:', error)
             setIsSubmitting(false)
             alert('Failed to save post. Please try again.')
