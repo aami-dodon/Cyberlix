@@ -39,6 +39,15 @@
       "Strong focus on aligning security with business growth"
     ]
   },
+  "featuredInsights": {
+    "eyebrow": "Insights",
+    "title": "Featured insights",
+    "description": "Hand-picked insights on cybersecurity strategy, threat intelligence, and compliance.",
+    "cta": {
+      "label": "Read all Insights",
+      "href": "/insights"
+    }
+  },
   "leadership": {
     "eyebrow": "Leadership",
     "heading": "Visionaries behind the shield",
