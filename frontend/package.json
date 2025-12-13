@@ -9,8 +9,7 @@
     "dev": "npm run db:migrate && dotenv -e ../.env -- next dev",
     "build": "dotenv -e ../.env -- next build",
     "start": "npm run db:migrate && dotenv -e ../.env -- next start",
-    "lint": "eslint",
-    "capture:screens": "node scripts/capture-screenshots.mjs"
+    "lint": "eslint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
