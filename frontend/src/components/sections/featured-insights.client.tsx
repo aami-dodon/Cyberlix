@@ -44,9 +44,9 @@ export function FeaturedInsightsSectionClient({ posts }: { posts: FeaturedPost[]
               </p>
             </div>
 
-            <Button variant="outline" size="lg" asChild className="h-11 px-6">
-              <Link href={featuredInsightsContent.cta.href} className="flex items-center gap-2">
-                {featuredInsightsContent.cta.label} <ArrowRight className="h-4 w-4" />
+            <Button variant="link" asChild className="p-0 h-auto font-semibold text-primary">
+              <Link href={featuredInsightsContent.cta.href} className="flex items-center gap-2 group">
+                {featuredInsightsContent.cta.label} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
