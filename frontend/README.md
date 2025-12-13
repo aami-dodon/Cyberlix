@@ -1,39 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cynalitx User Guide
+
+This guide explains how to manage the content, leadership team, and insights (blog posts) of the Cynalitx website.
 
 ## Getting Started
 
-First, run the development server:
+To run the application locally:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Notes:
-- Set `DATABASE_URL` (loaded from `../.env`) and ensure the database is reachable; `npm run dev` runs `prisma migrate deploy` before starting Next.js.
+The application will be available at [http://localhost:3000](http://localhost:3000) (or the port specified in your `.env`).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 1. Modifying Website Texts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The textual content of the website is managed through JSON files located in `src/content/`. This allows you to update text without touching the code.
 
-## Learn More
+### General Content
+*   **Location**: `src/content/*.json`
+*   **Files**:
+    *   `home.json`: Homepage content.
+    *   `services.json`: Services page descriptions.
+    *   `about.json`: About page content.
+    *   `footer.json` / `socials.json`: Footer links and social media URLs.
 
-To learn more about Next.js, take a look at the following resources:
+### Updating Social Links
+To update the main social media links (e.g., in the footer):
+1.  Open `src/content/socials.json`.
+2.  Update the values for `linkedIn`, `twitter`, `facebook`, etc.
+    ```json
+    {
+      "linkedIn": "https://linkedin.com/company/cynalitx",
+      "twitter": "https://twitter.com/cynalitx"
+    }
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 2. Managing Leaders Data
 
-## Deploy on Vercel
+The leadership team section is powered by a dedicated data file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*   **File**: `src/content/leadership.json`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Adding or Editing a Leader
+The `leaders` array contains objects representing each team member.
+
+```json
+{
+  "name": "Raamesh Kotian",
+  "title": "Co-Founder",
+  "image": "/images/team/ramesh.jpeg",
+  "shortBio": "...",
+  "socials": {
+    "linkedin": "...",
+    "email": "mailto:..."
+  }
+}
+```
+
+*   **Image**: Place new images in `public/images/team/` and reference them by path (e.g., `/images/team/photo.jpg`).
+*   **Socials**: Update the `linkedin` or `email` fields within the `socials` object for that specific leader.
+
+---
+
+## 3. Managing Insights (Admin Panel)
+
+Cynalitx features a built-in content management system (CMS) for "Insights" (Blog Posts).
+
+### Accessing the Admin Panel
+1.  Navigate to `/admin` (e.g., `http://localhost:3000/admin`).
+2.  Login with your administrator credentials.
+
+![Admin Login](public/docs/admin-login.png)
+
+### Admin Dashboard
+Once logged in, you will see the Dashboard, which lists all existing posts.
+
+![Admin Dashboard](public/docs/admin-dashboard.png)
+
+### Creating a New Insight
+1.  Click the **"Create Post"** button on the top right of the Dashboard.
+2.  Fill in the form:
+    *   **Title**: The headline of the article.
+    *   **Slug**: URL-friendly version of the title (auto-generated usually, or manual).
+    *   **Author**: Select the author.
+    *   **Category**: Choose a category (e.g., Industry Trends).
+    *   **Content**: Write your post using the Markdown editor.
+    *   **Cover Image**: Upload or provide a URL for the post header image.
+3.  Click **"Publish"** to make it live immediately, or **"Save Draft"**.
+
+### Editing an Insight
+1.  On the Dashboard, locate the post you wish to modify.
+2.  Click the **Pencil Icon** (Edit) next to the post.
+3.  Update the content and click **"Save Changes"**.
+
+### Deleting an Insight
+1.  On the Dashboard, locate the post to remove.
+2.  Click the **Trash Icon** (Delete).
+3.  Confirm the deletion when prompted. **This action cannot be undone.**
