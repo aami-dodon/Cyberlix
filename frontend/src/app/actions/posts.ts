@@ -5,8 +5,6 @@ import prisma from '@/lib/db'
 import type { Prisma } from '@prisma/client'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { writeFile, mkdir } from 'fs/promises'
-import path from 'path'
 import { createUniquePostSlug } from '@/lib/slug'
 
 function isUniqueConstraintError(error: unknown): boolean {
@@ -166,17 +164,12 @@ export async function deletePost(id: string) {
     revalidatePath('/insights')
 }
 
-async function uploadImage(file: File): Promise<string> {
-    const buffer = Buffer.from(await file.arrayBuffer())
-    const filename = `${Date.now()}-${file.name.replaceAll(' ', '_')}`
-    const uploadDir = process.env.UPLOADS_DIR
-        ? path.resolve(process.env.UPLOADS_DIR)
-        : path.join(process.cwd(), '.data/uploads')
+import { getStorageService } from '@/lib/storage-service'
 
+async function uploadImage(file: File): Promise<string> {
+    const storageService = getStorageService()
     try {
-        await mkdir(uploadDir, { recursive: true })
-        await writeFile(path.join(uploadDir, filename), buffer)
-        return `/uploads/${filename}`
+        return await storageService.upload(file)
     } catch (error) {
         console.error('Error uploading file:', error)
         return ''
