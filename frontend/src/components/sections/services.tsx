@@ -57,9 +57,11 @@ export function ServicesSection() {
                     {service.description}
                   </p>
 
-                  <a href={`/services/${service.slug}`} className="flex items-center text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform cursor-pointer mt-auto">
-                    {servicesSectionContent.cardLinkLabel} <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                  <Button variant="link" asChild className="mb-0 p-0 h-auto font-semibold text-primary group-hover:translate-x-1 transition-transform mt-auto justify-start">
+                    <a href={`/services/${service.slug}`}>
+                      {servicesSectionContent.cardLinkLabel} <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
               </Card>
             ))}
@@ -70,8 +72,8 @@ export function ServicesSection() {
           <div className="flex justify-center mt-8">
             <Button
               variant="glow"
-              size="lg"
-              className="h-12 px-8 text-base font-semibold transition-all duration-300"
+              size="xl"
+              className="rounded-full font-semibold transition-all duration-300"
               asChild
             >
               <a href={servicesSectionContent.cta.href}>{servicesSectionContent.cta.label}</a>

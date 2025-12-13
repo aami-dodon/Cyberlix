@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
         // 1. Store in CSV
         // Ensure data directory exists
-        const dataDir = path.join(process.cwd(), 'data');
+        const dataDir = path.join(process.cwd(), '.data');
         if (!fs.existsSync(dataDir)) {
             try {
                 fs.mkdirSync(dataDir);

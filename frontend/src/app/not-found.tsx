@@ -18,7 +18,7 @@ export default function NotFound() {
                     moved, deleted, or never existed.
                 </p>
                 <div className="mt-8 flex gap-4">
-                    <Button asChild size="lg" className="rounded-full px-8">
+                    <Button asChild size="xl" className="rounded-full">
                         <Link href="/">Back to Home</Link>
                     </Button>
                 </div>

@@ -168,9 +168,9 @@ export function ContactSection() {
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
                   <Button
-                    className="w-full h-12 px-8 text-base font-semibold transition-all duration-300"
+                    className="w-full rounded-full font-semibold transition-all duration-300"
                     variant="glow"
-                    size="lg"
+                    size="xl"
                     disabled={isLoading}
                   >
                     {isLoading ? (

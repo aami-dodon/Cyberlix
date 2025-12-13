@@ -84,8 +84,8 @@ export function LeadershipSection() {
                 <div className="mt-8 pt-6 border-t border-border">
                   <Button
                     variant="glow"
-                    size="lg"
-                    className="w-full sm:w-auto group/btn"
+                    size="xl"
+                    className="w-full sm:w-auto group/btn rounded-full"
                     asChild
                   >
                     <Link href={`/leadership/${leader.slug}`}>

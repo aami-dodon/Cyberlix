@@ -7,6 +7,8 @@ import { ArrowRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react
 import Link from "next/link";
 import { toast } from "sonner";
 
+import socialData from "@/content/socials.json";
+
 const legalLinks = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
@@ -17,10 +19,10 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Linkedin, href: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN, label: "LinkedIn" },
-    { icon: Twitter, href: process.env.NEXT_PUBLIC_SOCIAL_TWITTER, label: "Twitter" },
-    { icon: Facebook, href: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK, label: "Facebook" },
-    { icon: Instagram, href: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM, label: "Instagram" },
+    { icon: Linkedin, href: socialData.linkedIn, label: "LinkedIn" },
+    { icon: Twitter, href: socialData.twitter, label: "Twitter" },
+    { icon: Facebook, href: socialData.facebook, label: "Facebook" },
+    { icon: Instagram, href: socialData.instagram, label: "Instagram" },
   ].filter((link) => link.href);
 
   return (
@@ -108,8 +110,8 @@ export function Footer() {
             />
             <Button
               type="submit"
-              size="icon"
-              className="absolute right-1 top-1 h-8 w-8 bg-primary text-primary-foreground hover:bg-primary/90"
+              size="icon-sm"
+              className="absolute right-1 top-1 rounded-full"
             >
               <ArrowRight className="h-4 w-4" />
               <span className="sr-only">Subscribe</span>

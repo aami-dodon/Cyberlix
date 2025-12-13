@@ -30,12 +30,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <BackgroundGrid />
             <div className="layout-container relative z-10">
                 <FadeInSection>
-                    <Link
-                        href="/services"
-                        className="inline-flex items-center text-sm text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors mb-8"
-                    >
-                        <ArrowLeft className="mr-2 h-4 w-4" /> {serviceDetailContent.backLinkLabel}
-                    </Link>
+                    <Button variant="ghost" asChild className="pl-0 hover:pl-2 transition-all mb-8 text-muted-foreground hover:text-primary">
+                        <Link href="/services">
+                            <ArrowLeft className="mr-2 h-4 w-4" /> {serviceDetailContent.backLinkLabel}
+                        </Link>
+                    </Button>
                 </FadeInSection>
 
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">

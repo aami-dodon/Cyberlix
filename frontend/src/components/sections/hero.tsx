@@ -63,8 +63,8 @@ export function HeroSection() {
             <Button
               asChild
               variant="glow"
-              size="lg"
-              className="h-12 px-8 text-base font-semibold transition-all duration-300"
+              size="xl"
+              className="rounded-full font-semibold transition-all duration-300"
             >
               <a href={heroContent.cta.href}>{heroContent.cta.label}</a>
             </Button>

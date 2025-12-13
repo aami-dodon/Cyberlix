@@ -74,7 +74,8 @@ function LoginForm() {
 
                         <Button
                             type="submit"
-                            className="w-full h-11 text-base font-medium shadow-lg hover:shadow-primary/25 transition-all duration-300"
+                            size="xl"
+                            className="w-full font-medium shadow-lg hover:shadow-primary/25 transition-all duration-300"
                             disabled={isPending}
                         >
                             {isPending ? (

@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BackgroundGrid } from "@/components/ui/background-grid";
+import { Button } from "@/components/ui/button";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { Linkedin, Twitter, Mail, ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -29,12 +30,11 @@ export default async function LeaderPage(props: { params: Promise<{ slug: string
             <BackgroundGrid />
             <div className="layout-container relative z-10 max-w-4xl mx-auto space-y-12">
                 <FadeInSection>
-                    <Link
-                        href="/#leadership"
-                        className="inline-flex items-center text-sm text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors mb-8"
-                    >
-                        <ArrowLeft className="mr-2 h-4 w-4" /> {leadershipPageContent.backLinkLabel}
-                    </Link>
+                    <Button variant="ghost" asChild className="pl-0 hover:pl-2 transition-all mb-8 text-muted-foreground hover:text-primary">
+                        <Link href="/#leadership">
+                            <ArrowLeft className="mr-2 h-4 w-4" /> {leadershipPageContent.backLinkLabel}
+                        </Link>
+                    </Button>
 
                     <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
                         <div className="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left space-y-6">

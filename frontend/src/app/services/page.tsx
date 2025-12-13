@@ -2,6 +2,7 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { BackgroundGrid } from "@/components/ui/background-grid";
+import { Button } from "@/components/ui/button";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import servicesContent from "@/content/services.json";
 import { mapServicesWithIcons } from "@/lib/service-icon-map";
@@ -16,12 +17,11 @@ export default function ServicesPage() {
             <BackgroundGrid />
             <div className="layout-container relative z-10">
                 <FadeInSection>
-                    <Link
-                        href="/"
-                        className="inline-flex items-center text-sm text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors mb-6"
-                    >
-                        <ArrowLeft className="mr-2 h-4 w-4" /> {servicesPageContent.backLinkLabel}
-                    </Link>
+                    <Button variant="ghost" asChild className="pl-0 hover:pl-2 transition-all mb-6 text-muted-foreground hover:text-primary">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" /> {servicesPageContent.backLinkLabel}
+                        </Link>
+                    </Button>
                     <div className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
                             {servicesPageContent.heading}

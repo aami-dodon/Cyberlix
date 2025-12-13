@@ -89,7 +89,7 @@ function MobileMenu() {
             asChild
             variant="glow"
             className="w-full rounded-full font-semibold transition-all duration-300"
-            size="default"
+            size="xl"
           >
             <Link href="/coming-soon">Live Demo</Link>
           </Button>
@@ -144,7 +144,7 @@ export function Header() {
               asChild
               variant="glow"
               className="rounded-full font-semibold transition-all duration-300"
-              size="default"
+              size="xl"
             >
               <Link href="/coming-soon">Live Demo</Link>
             </Button>
