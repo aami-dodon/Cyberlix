@@ -7,6 +7,8 @@ import { Plus, Pencil, Trash2, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { deletePost } from '@/app/actions/posts'
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminDashboard() {
     const posts = await prisma.post.findMany({
         orderBy: { createdAt: 'desc' }

@@ -20,6 +20,9 @@ coverage/
 # Deployment
 .vercel/
 
+# Local databases
+*.db
+
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts

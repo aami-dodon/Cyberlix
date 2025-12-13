@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "dotenv -e ../.env -- next dev",
+    "db:migrate": "dotenv -e ../.env -- prisma migrate deploy",
+    "db:push": "dotenv -e ../.env -- prisma db push",
+    "dev": "npm run db:migrate && dotenv -e ../.env -- next dev",
     "build": "dotenv -e ../.env -- next build",
-    "start": "dotenv -e ../.env -- next start",
+    "start": "npm run db:migrate && dotenv -e ../.env -- next start",
     "lint": "eslint",
     "capture:screens": "node scripts/capture-screenshots.mjs"
   },
