@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import servicesContent from "@/content/services.json";
+import { services as servicesContent } from "@/content";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";

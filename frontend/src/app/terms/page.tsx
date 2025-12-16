@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
-import termsContent from "@/content/terms.json";
+import { terms as termsContent } from "@/content";
 
 export const metadata: Metadata = {
     title: termsContent.metadata.title,

@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { FadeInSection } from "@/components/ui/fade-in-section";
-import homeContent from "@/content/home.json";
+import { home as homeContent } from "@/content";
 
 type FeaturedPost = {
   id: string;

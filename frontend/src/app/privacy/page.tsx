@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
-import privacyContent from "@/content/privacy.json";
+import { privacy as privacyContent } from "@/content";
 
 export const metadata: Metadata = {
     title: privacyContent.metadata.title,

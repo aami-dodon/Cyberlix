@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
-import securityContent from "@/content/security.json";
+import { security as securityContent } from "@/content";
 
 export const metadata: Metadata = {
     title: securityContent.metadata.title,

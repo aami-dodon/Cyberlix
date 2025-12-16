@@ -9,7 +9,7 @@ import { Mail, Phone, Loader2 } from "lucide-react";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { useState } from "react";
 import { toast } from "sonner";
-import homeContent from "@/content/home.json";
+import { home as homeContent } from "@/content";
 
 const contactContent = homeContent.contact;
 const supportEmail = contactContent.support.defaultEmail;

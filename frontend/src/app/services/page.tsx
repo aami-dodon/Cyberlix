@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
 import { FadeInSection } from "@/components/ui/fade-in-section";
-import servicesContent from "@/content/services.json";
+import { services as servicesContent } from "@/content";
 import { mapServicesWithIcons } from "@/lib/service-icon-map";
 import Link from "next/link";
 

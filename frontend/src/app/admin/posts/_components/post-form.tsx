@@ -18,7 +18,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { cn } from '@/lib/utils'
 
 import RichTextEditor from './rich-text-editor'
-import leadershipData from '@/content/leadership.json'
+import { leadership as leadershipData } from '@/content'
 
 interface PostFormProps {
     post?: {

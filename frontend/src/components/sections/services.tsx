@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Card } from "@/components/ui/card";
 import { FadeInSection } from "@/components/ui/fade-in-section";
-import homeContent from "@/content/home.json";
-import servicesContent from "@/content/services.json";
+import { home as homeContent, services as servicesContent } from "@/content";
 import { mapServicesWithIcons } from "@/lib/service-icon-map";
 
 const servicesSectionContent = homeContent.servicesSection;

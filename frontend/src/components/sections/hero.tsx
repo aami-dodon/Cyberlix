@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { cn } from "@/lib/utils";
 import { sessionState } from "@/lib/session-store";
-import homeContent from "@/content/home.json";
+import { home as homeContent } from "@/content";
 
 const heroContent = homeContent.hero;
 

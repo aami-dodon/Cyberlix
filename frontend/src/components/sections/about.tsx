@@ -1,6 +1,6 @@
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { FadeInSection } from "@/components/ui/fade-in-section";
-import homeContent from "@/content/home.json";
+import { home as homeContent } from "@/content";
 
 const aboutContent = homeContent.about;
 

@@ -7,7 +7,7 @@ import { ArrowRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react
 import Link from "next/link";
 import { toast } from "sonner";
 
-import socialData from "@/content/socials.json";
+import { socials as socialData } from "@/content";
 
 const legalLinks = [
   { label: "Privacy", href: "/privacy" },

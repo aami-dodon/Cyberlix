@@ -7,8 +7,7 @@ import { Card } from "@/components/ui/card";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import homeContent from "@/content/home.json";
-import leadershipContent from "@/content/leadership.json";
+import { home as homeContent, leadership as leadershipContent } from "@/content";
 
 const leadershipSectionContent = homeContent.leadership;
 const leadershipData = leadershipContent.leaders;

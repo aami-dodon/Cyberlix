@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { Linkedin, Twitter, Mail, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import leadershipContent from "@/content/leadership.json";
+import { leadership as leadershipContent } from "@/content";
 
 const leadershipData = leadershipContent.leaders;
 const leadershipPageContent = leadershipContent.page;

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Button } from "@/components/ui/button";
-import comingSoonContent from "@/content/coming-soon.json";
+import { comingSoon as comingSoonContent } from "@/content";
 
 export default function ComingSoonPage() {
     return (

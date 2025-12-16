@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 import { BackgroundGrid } from "@/components/ui/background-grid";
 import { Card } from "@/components/ui/card";
 import { FadeInSection } from "@/components/ui/fade-in-section";
-import homeContent from "@/content/home.json";
+import { home as homeContent } from "@/content";
 
 const whyUsContent = homeContent.whyUs;
 
