@@ -5,7 +5,7 @@ import { login } from '@/app/actions/auth'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { CynalitxLogo } from '@/components/ui/logo'
+import { CyberlixLogo } from '@/components/ui/logo'
 import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Suspense } from 'react'
@@ -37,7 +37,7 @@ function LoginForm() {
                             transition={{ delay: 0.2, duration: 0.4 }}
                             className="bg-primary/10 p-4 rounded-full ring-1 ring-primary/20 shadow-lg mb-2"
                         >
-                            <CynalitxLogo className="h-10 w-10 text-primary" />
+                            <CyberlixLogo className="h-10 w-10 text-primary" />
                         </motion.div>
                         <div className="space-y-2">
                             <h1 className="text-2xl font-bold tracking-tight">Welcome Back</h1>

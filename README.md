@@ -1,78 +1,48 @@
-# Cynalitx User Guide
+# Cyberlix User Guide
 
-This guide explains how to manage the content, leadership team, and insights (blog posts) of the Cynalitx website.
+This guide explains how to manage the content, leadership team, and insights (blog posts) of the Cyberlix website.
 
-## Getting Started
+## Table of Contents
 
-To run the application locally:
-
-```bash
-npm run dev
-```
-
-The application will be available at [http://localhost:3000](http://localhost:3000) (or the port specified in your `.env`).
+- [Content Management](#content-management)
+- [Managing Leadership Team](#managing-leadership-team)
+- [Managing Insights (Blog)](#managing-insights-blog)
+- [Development Commands](#development-commands)
 
 ---
 
-## 1. Modifying Website Texts
+## Content Management
 
-The textual content of the website is managed through JSON files located in `src/content/`. This allows you to update text without touching the code.
+All the text content on the website is managed via a central content file.
 
-### General Content
-*   **Location**: `src/content/*.json`
-*   **Files**:
-    *   `home.json`: Homepage content.
-    *   `services.json`: Services page descriptions.
-    *   `about.json`: About page content.
-    *   `footer.json` / `socials.json`: Footer links and social media URLs.
+**File Location:** `frontend/src/content/index.js`
 
-### Updating Social Links
-To update the main social media links (e.g., in the footer):
-1.  Open `src/content/socials.json`.
-2.  Update the values for `linkedIn`, `twitter`, `facebook`, etc.
-    ```json
-    {
-      "linkedIn": "https://linkedin.com/company/cynalitx",
-      "twitter": "https://twitter.com/cynalitx"
+### How to Update Content
+
+1.  Open the `frontend/src/content/index.js` file.
+2.  Locate the section you want to edit (e.g., `home`, `about`, `contact`).
+3.  Update the text values inside the quotes.
+4.  Save the file.
+5.  Commit and push your changes to see them live.
+
+**Example:**
+
+To update the "Contact Us" email in the footer:
+
+```javascript
+"contact": {
+    "title": "Contact",
+    "address": "123 Security Way, Tech City, TC 90210",
+    "phone": "+1 (555) 123-4567",
+    "email": "contact@cyberlix.com", // Update this line
+    "defaultEmail": "support@cyberlix.com",
+    "social": {
+      "linkedIn": "https://linkedin.com/company/cyberlix",
+      "twitter": "https://twitter.com/cyberlix"
     }
-    ```
-
----
-
-## 2. Managing Leaders Data
-
-The leadership team section is powered by a dedicated data file.
-
-*   **File**: `src/content/leadership.json`
-
-### Adding or Editing a Leader
-The `leaders` array contains objects representing each team member.
-
-```json
-{
-  "name": "Raamesh Kotian",
-  "title": "Co-Founder",
-  "image": "/images/team/ramesh.jpeg",
-  "shortBio": "...",
-  "socials": {
-    "linkedin": "...",
-    "email": "mailto:..."
-  }
 }
 ```
 
-*   **Image**: Place new images in `public/images/team/` and reference them by path (e.g., `/images/team/photo.jpg`).
-*   **Socials**: Update the `linkedin` or `email` fields within the `socials` object for that specific leader.
-
----
-
-## 3. Managing Insights (Admin Panel)
-
-Cynalitx features a built-in content management system (CMS) for "Insights" (Blog Posts).
-
-### Accessing the Admin Panel
-1.  Navigate to `/admin` (e.g., `http://localhost:3000/admin`).
-2.  Login with your administrator credentials.
 
 ![Admin Login](frontend/public/docs/admin-login.png)
 

@@ -22,7 +22,7 @@ import {
 
 const navItems = [
   { name: "Services", href: "/#services" },
-  { name: "Why Cynalitx", href: "/#why-cynalitx" },
+  { name: "Why Cyberlix", href: "/#why-cyberlix" },
   { name: "Leadership", href: "/#leadership" },
   { name: "Insights", href: "/insights" },
   { name: "Contact", href: "/#contact" },
@@ -99,7 +99,7 @@ function MobileMenu() {
   );
 }
 
-import { CynalitxLogo } from "@/components/ui/logo";
+import { CyberlixLogo } from "@/components/ui/logo";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -126,9 +126,9 @@ export function Header() {
       <header className="layout-container flex items-center justify-between relative">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50 shrink-0">
-          <CynalitxLogo className="h-8 w-8" />
+          <CyberlixLogo className="h-8 w-8" />
           <span className="text-lg font-bold tracking-tight text-foreground transition-all">
-            Cynalitx
+            Cyberlix
           </span>
         </Link>
 

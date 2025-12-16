@@ -19,7 +19,7 @@ export default function AdminLayout({
                     <div className="flex items-center gap-6">
                         <Link href="/admin" className="font-bold text-lg flex items-center gap-2">
                             <LayoutDashboard className="h-5 w-5" />
-                            Cynalitx Admin
+                            Cyberlix Admin
                         </Link>
                         <nav className="hidden md:flex items-center gap-4 text-sm font-medium">
                             <Link href="/admin" className="text-foreground hover:text-primary transition-colors">

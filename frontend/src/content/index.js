@@ -1,88 +1,88 @@
 export const comingSoon = {
     "heading": "Coming Soon",
-    "description": "We are working hard to bring you something amazing. This page is currently under construction and will be available shortly. Stay tuned for updates.",
+    "description": "We are architecting the next generation of digital defense. This interface is currently compiling.",
     "cta": {
-        "label": "Return Home",
+        "label": "Return to Base",
         "href": "/"
     }
 };
 
 export const home = {
     "hero": {
-        "eyebrow": "Enterprise Cybersecurity Leadership",
-        "title": "We Secure Your Cyber Presence",
-        "description": "Cynalitx provides end-to-end cybersecurity solutions — from strategy and governance to 24×7 threat monitoring, cloud security, data protection, and compliance.",
+        "eyebrow": "Next-Generation Cyber Defense",
+        "title": "Intelligence-Led Security for the Quantum Era",
+        "description": "Cyberlix fuses advanced AI threat detection with battle-tested human intellect to secure your most critical digital assets against tomorrow's adversaries.",
         "cta": {
-            "label": "Book Consultation",
+            "label": "Secure Your Infrastructure",
             "href": "#contact"
         }
     },
     "about": {
-        "eyebrow": "About Cynalitx",
-        "headingPrefix": "Full-spectrum",
-        "headingHighlight": "security leadership",
-        "description": "Cynalitx is a full-spectrum cybersecurity partner offering strategic leadership, cloud and data protection, compliance advisory, advanced threat monitoring, and enterprise-grade security operations. We help organizations strengthen resilience, reduce cyber risks, and align security with business growth."
+        "eyebrow": "Our DNA",
+        "headingPrefix": "Architecting",
+        "headingHighlight": "Digital Resilience",
+        "description": "We are not just a security vendor; we are your strategic defense partner. Born from the intersection of military-grade intelligence and enterprise risk management, Cyberlix exists to ensure your innovation is never stifled by insecurity. We build unwavering trust in an unpredictable digital landscape."
     },
     "servicesSection": {
-        "eyebrow": "Our Expertise",
-        "title": "Comprehensive security",
-        "description": "End-to-end cybersecurity solutions tailored to your specific risk profile.",
-        "cardLinkLabel": "Learn more",
+        "eyebrow": "Operational Capabilities",
+        "title": "Elite defense mechanisms",
+        "description": "A holistic suite of offensive and defensive capabilities designed to neutralize threats before they materialize.",
+        "cardLinkLabel": "Explore Capability",
         "cta": {
-            "label": "View All Services",
+            "label": "View All Capabilities",
             "href": "/services"
         }
     },
     "whyUs": {
-        "eyebrow": "Why Cynalitx",
-        "title": "Why leading enterprises",
-        "highlight": "trust us",
-        "description": "We don't just secure your data; we empower your business to grow with confidence.",
+        "eyebrow": "The Cyberlix Advantage",
+        "title": "Why specific organizations",
+        "highlight": "choose us",
+        "description": "In a world of generic alerts, we provide curated intelligence and decisive action.",
         "reasons": [
-            "Led by industry veterans with decades of cybersecurity leadership experience",
-            "Proven capabilities across banking, financial services, and technology sectors",
-            "AI/ML-powered threat detection and next-gen SOC",
-            "Deep expertise in compliance frameworks (ISO 27001, SOC 2, PCI DSS, GDPR, NIST)",
-            "Flexible engagement models tailored to business needs",
-            "24×7 monitoring and rapid response capabilities",
-            "Strong focus on aligning security with business growth"
+            " elite team of former state-level operatives and enterprise CISOs",
+            "Proprietary AI threat modeling customized to your sector",
+            "Zero-latency incident response architecture",
+            "Compliance-first methodology (ISO, NIST, GDPR standards)",
+            "Predictive risk scoring for proactive defense",
+            "Vendor-agnostic integration with your existing stack",
+            "Business-aligned security strategies that enable speed, not friction"
         ]
     },
     "featuredInsights": {
-        "eyebrow": "Insights",
-        "title": "Featured insights",
-        "description": "Hand-picked insights on cybersecurity strategy, threat intelligence, and compliance.",
+        "eyebrow": "Intel Feed",
+        "title": "Strategic Intelligence",
+        "description": "Critical analysis on emerging threat vectors, regulatory shifts, and defense paradigms.",
         "cta": {
-            "label": "Read all Insights",
+            "label": "Access Intel",
             "href": "/insights"
         }
     },
     "leadership": {
-        "eyebrow": "Leadership",
-        "heading": "Visionaries behind the shield",
-        "ctaLabel": "View Profile"
+        "eyebrow": "Command",
+        "heading": "Architects of Defense",
+        "ctaLabel": "View Dossier"
     },
     "contact": {
-        "eyebrow": "Get in Touch",
-        "titlePrefix": "Speak with our",
-        "titleHighlight": "cybersecurity experts",
-        "description": "Speak with our cybersecurity experts to strengthen your organization’s security posture and accelerate compliance readiness.",
+        "eyebrow": "Secure Channel",
+        "titlePrefix": "Initiate",
+        "titleHighlight": "Contact Protocol",
+        "description": "Connect with our security architects to assess your threat landscape and fortify your perimeter.",
         "support": {
-            "emailLabel": "Email Us",
-            "phoneLabel": "Call Us",
-            "defaultEmail": "contact@cynalitx.com",
-            "defaultPhone": "+91-1234567890"
+            "emailLabel": "Secure Mail",
+            "phoneLabel": "Direct Line",
+            "defaultEmail": "secure@cyberlix.com",
+            "defaultPhone": "+1 (555) 019-2834"
         },
         "cta": {
-            "label": "Request Consultation",
-            "loadingLabel": "Sending..."
+            "label": "Transmit Request",
+            "loadingLabel": "Encrypting..."
         },
         "placeholders": {
-            "name": "Name",
-            "company": "Company",
-            "email": "Email",
-            "phone": "Phone",
-            "message": "Tell us about your security needs..."
+            "name": "Identity",
+            "company": "Organization",
+            "email": "Secure Email",
+            "phone": "Contact Number",
+            "message": "Briefing details..."
         }
     }
 };
@@ -90,45 +90,43 @@ export const home = {
 export const leadership = {
     "page": {
         "backLinkLabel": "Back to Leadership",
-        "aboutHeading": "About"
+        "aboutHeading": "Profile"
     },
     "leaders": [
         {
-            "name": "Raamesh Kotian",
-            "slug": "raamesh-kotian",
-            "title": "Co-Founder",
-            "image": "/images/team/ramesh.jpeg",
-            "initials": "RK",
-            "shortBio": "28+ years in IT, Cyber Risk, and Business Transformation. Led major cyber risk functions at Credit Suisse, IDFC, Poonawalla Fincorp, and HDFC Bank.",
+            "name": "Alexander Vane",
+            "slug": "alexander-vane",
+            "title": "Managing Director",
+            "image": "/images/team/vane_icon.png",
+            "initials": "AV",
+            "shortBio": "20+ years in offensive cyber operations and strategic risk. Former advisor to central banks on digital resilience and infrastructure protection.",
             "fullBio": [
-                "Raamesh Kotian has 28+ years of experience in senior positions in the areas of Information Technology, Application Development, Cyber Risk, Cyber Resiliency, Data Science, Governance and Business Transformation, supporting various businesses like Retail Banking, Consumer Cards, Investment Banking, Insurance, and Payments.",
-                "He has led the Cyber Security Risk functions for Credit Suisse, IDFC Bank, Poonawalla Fincorp and HDFC Bank. He also has experience of working with Big 4 consulting company and also was based in USA providing SOX consultancy.",
-                "Raamesh is passionate about helping organizations in building and transforming their risk functions using technology and managing cyber security risk proactively. He mentors and coaches' leaders, students and risk professionals at workplace and outside. Ramesh has spoken in multiple forums including RSA Asia Security Conference and DSCI Annual conference."
+                "Alexander Vane brings over two decades of high-stakes experience in information warfare and enterprise risk strategy. Before founding Cyberlix, he served as a strategic advisor to G7 central banks, helping design resilient financial infrastructures capable of withstanding state-sponsored attacks.",
+                "His philosophy is simple: security is not a barrier, but an enabler of speed. He has led digital transformation security programs for Fortune 100 conglomerates, harmonizing agile development with ironclad governance.",
+                "A frequent keynote speaker at Black Hat and DEF CON, Alexander is a vocal advocate for 'Security by Design' and the ethical use of offensive capabilities for defensive hardening."
             ],
             "socials": {
                 "linkedin": "#",
                 "twitter": "#",
-                "email": "mailto:contact@cynalitx.com"
+                "email": "mailto:vane@cyberlix.com"
             }
         },
         {
-            "name": "Amit Patil",
-            "slug": "amit-patil",
-            "title": "Co-Founder",
-            "image": "/images/team/amit.jpeg",
-            "initials": "AP",
-            "shortBio": "18+ years in cybersecurity across banking and tech. Former Deputy CISO at RBL Bank, specializing in security architecture and regulatory compliance.",
+            "name": "Dr. Isadora Krov",
+            "slug": "isadora-krov",
+            "title": "Head of Threat Intelligence",
+            "image": "/images/team/krov_icon.png",
+            "initials": "IK",
+            "shortBio": "Ph.D. in Computational Cryptography. A recognized thought leader in adversarial AI and zero-trust architectures.",
             "fullBio": [
-                "Amit Patil is a seasoned cybersecurity leader with over 18 years of experience across banking, financial services, and technology domains. He has served in leadership roles including Deputy CISO at RBL Bank and Head of Information Security at Syngene International.",
-                "Amit specializes in enterprise security architecture, risk management, cloud and data security, and third-party risk governance. He has successfully driven implementation of ISO 27001, SOC 2, PCI DSS, and regulatory compliance frameworks across large enterprises.",
-                "His expertise extends to application security, threat management, and cybersecurity strategy aligned with business objectives.",
-                "Amit has presented to Boards and Executive Committees on cyber risk posture and resilience initiatives.",
-                "Amit is known for his practical, risk-based approach and focus on aligning security with business growth."
+                "Dr. Isadora Krov is the intellectual force behind Cyberlix's threat detection algorithms. With a Ph.D. in Computational Cryptography from MIT, she specializes in securing systems against post-quantum decryption threats.",
+                "Previously the Lead Architect for a global defense contractor's secure communications division, Isadora has pioneered new methodologies in adversarial AI training, ensuring that Cyberlix's automated defenses evolve faster than the attackers.",
+                "She leads our 'Future Threats' division, a research unit dedicated to identifying and neutralizing theoretical attack vectors before they become weaponized in the wild."
             ],
             "socials": {
                 "linkedin": "#",
                 "twitter": "#",
-                "email": "mailto:contact@cynalitx.com"
+                "email": "mailto:krov@cyberlix.com"
             }
         }
     ]
@@ -136,35 +134,35 @@ export const leadership = {
 
 export const privacy = {
     "metadata": {
-        "title": "Privacy Policy - Cynalitx",
-        "description": "Privacy Policy for Cynalitx"
+        "title": "Privacy Protocol - Cyberlix",
+        "description": "Data Handling Classification for Cyberlix"
     },
-    "backLinkLabel": "Back to Home Page",
-    "heading": "Privacy Policy",
-    "lastUpdated": "Last updated: December 12, 2025",
+    "backLinkLabel": "Return to Source",
+    "heading": "Privacy Protocol",
+    "lastUpdated": "Last Update: 2025-12-16",
     "sections": [
         {
-            "heading": "1. Introduction",
+            "heading": "1. Directive",
             "body": [
-                "Welcome to Cynalitx. We value your privacy and are dedicated to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website and use our services."
+                "Cyberlix is committed to the absolute sanctity of data. This protocol outlines the strict parameters under which we collect, encrypt, and manage information."
             ]
         },
         {
-            "heading": "2. Information We Collect",
+            "heading": "2. Data Acquisition",
             "body": [
-                "We may collect personal information that you voluntarily provide to us when you register on the website, express an interest in obtaining information about us or our products and services, when you participate in activities on the website, or otherwise when you contact us."
+                "We collect only mission-critical data points required to authorize access and deliver intelligence services. All telemetry is anonymized by default."
             ]
         },
         {
-            "heading": "3. How We Use Your Information",
+            "heading": "3. Utilization Parameters",
             "body": [
-                "We use personal information collected via our website for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations."
+                "Data is utilized strictly for service delivery, threat modeling, and authorized communication. We do not monetize client data streams."
             ]
         },
         {
-            "heading": "4. Contact Us",
+            "heading": "4. Secure Channel",
             "body": [
-                "If you have questions or comments about this policy, you may email us at support@cynalitx.com."
+                "For inquiries regarding data sovereignty, contact our Data Protection Officer at privacy@cyberlix.com."
             ]
         }
     ]
@@ -172,35 +170,35 @@ export const privacy = {
 
 export const security = {
     "metadata": {
-        "title": "Security - Cynalitx",
-        "description": "Security information for Cynalitx"
+        "title": "Security Posture - Cyberlix",
+        "description": "Defense infrastructure details for Cyberlix"
     },
-    "backLinkLabel": "Back to Home Page",
-    "heading": "Security",
-    "lastUpdated": "Last updated: December 12, 2025",
+    "backLinkLabel": "Return to Source",
+    "heading": "Security Posture",
+    "lastUpdated": "Last Update: 2025-12-16",
     "sections": [
         {
-            "heading": "1. Our Commitment to Security",
+            "heading": "1. Core Philosophy",
             "body": [
-                "At Cynalitx, specific attention is paid to the security of our platform and the protection of your data. We employ industry-standard security practices to ensure that your information remains safe."
+                "We practice what we protect. Cyberlix operates on a zero-trust architecture, assuming breach resilience as a baseline state."
             ]
         },
         {
-            "heading": "2. Data Protection",
+            "heading": "2. Encryption Standards",
             "body": [
-                "We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information."
+                "All data at rest is AES-256 encrypted. Data in transit is secured via TLS 1.3 with perfect forward secrecy."
             ]
         },
         {
-            "heading": "3. Monitoring and Reporting",
+            "heading": "3. Continuous Monitoring",
             "body": [
-                "We continuously monitor our systems for potential vulnerabilities and attacks. If you believe you have found a security vulnerability in our service, please report it to us at security@cynalitx.com."
+                "Our internal systems are subject to continuous, automated red-teaming to identify and remediate configuration drift immediately."
             ]
         },
         {
-            "heading": "4. Certified Processes",
+            "heading": "4. Compliance",
             "body": [
-                "Our security processes are designed to meet the rigorous standards expected by enterprise clients. We regularly review and update our security policies to adapt to evolving threats."
+                "Our operations align with SOC 2 Type II and ISO 27001 standards. We undergo quarterly third-party penetration testing."
             ]
         }
     ]
@@ -208,139 +206,129 @@ export const security = {
 
 export const services = {
     "page": {
-        "backLinkLabel": "Back to Home Page",
-        "heading": "Our Services",
-        "description": "Comprehensive cybersecurity solutions designed to protect your organization against evolving threats and ensure regulatory compliance.",
-        "cardCtaLabel": "View Details"
+        "backLinkLabel": "Return to Base",
+        "heading": "Defense Capabilities",
+        "description": "A comprehensive arsenal of cybersecurity services engineered to identify, protect, detect, respond, and recover.",
+        "cardCtaLabel": "Initialize"
     },
     "detailPage": {
-        "backLinkLabel": "Back to Services",
-        "ctaLabel": "Book a Consultation",
-        "sectionHeading": "What We Offer"
+        "backLinkLabel": "All Capabilities",
+        "ctaLabel": "Engage Team",
+        "sectionHeading": "Operational Scope"
     },
     "list": [
         {
             "id": "vciso",
-            "title": "vCISO & Information Security Leadership",
+            "title": "Strategic vCISO Governance",
             "slug": "vciso-information-security-leadership",
-            "description": "Gain access to senior cybersecurity leadership without hiring full-time. Our vCISO service delivers security governance, regulatory guidance, and strategic risk insights.",
+            "description": "On-demand executive security leadership. We provide the governance frameworks and board-level strategy needed to navigate complex regulatory landscapes.",
             "icon": "Shield",
             "details": [
-                "Executive and Board presentations on security",
-                "Security Governance, risk and compliance",
-                "Regulatory Advisory Services",
-                "Cybersecurity Tools & Implementation Support",
-                "Periodic review and updates of security practices",
-                "Strategic Reporting for stakeholder insights"
+                "Board-level Risk Reporting & Visualization",
+                "ISO/NIST/SOC2 Governance Architecture",
+                "Regulatory Compliance Strategy (GDPR, HIPAA, DORA)",
+                "Security Stack Optimization",
+                "Third-Party Risk Management (TPRM)",
+                "Crisis Management Leadership"
             ]
         },
         {
             "id": "maturity-assessment",
-            "title": "Cyber Security Maturity Assessment",
+            "title": "Cyber Maturity Benchmarking",
             "slug": "cyber-security-maturity-assessment",
-            "description": "Understand your organization’s current cybersecurity posture and build a structured roadmap for improvement against global standards.",
+            "description": "A rigorous forensic audit of your current defense posture, delivering a scored roadmap to elevate your organization from reactive to resilient.",
             "icon": "BarChart3",
             "details": [
-                "Assess current posture against standards",
-                "Identify gaps and areas for improvements",
-                "Develop 2-3 year maturity improvement roadmap",
-                "Assist in roadmap implementation",
-                "Continuous Assessment to ensure improvements"
+                "CMMI-based Maturity Scoring",
+                "Gap Analysis against NIST CSF 2.0",
+                "3-Year Strategic Roadmap Development",
+                "ROI Modeling for Security Investments",
+                "Continuous Improvement Metrics"
             ]
         },
         {
             "id": "cloud-security",
-            "title": "Cloud Security",
+            "title": "Cloud Fortress Architecture",
             "slug": "cloud-security",
-            "description": "Strengthen and optimize cloud environments across AWS, Azure, GCP, and hybrid setups with configuration reviews and access controls.",
+            "description": "Hardening your cloud perimeter across multi-cloud environments (AWS, Azure, GCP). We ensure scalability doesn't compromise sovereignty.",
             "icon": "Cloud",
             "details": [
-                "Cloud configuration review",
-                "Roadmap to manage cloud security risks",
-                "Cloud Access Control",
-                "Data Encryption Standards",
-                "Compliance with Cloud Standards",
-                "Continuous Cloud Monitoring"
+                "CSPM (Cloud Security Posture Management)",
+                "Container & Kubernetes Security",
+                "IaC (Infrastructure as Code) Scanning",
+                "Zero-Trust Access Implementation",
+                "Cloud-Native Threat Detection"
             ]
         },
         {
             "id": "data-security",
-            "title": "Data Security",
+            "title": "Data Sovereignty & DLP",
             "slug": "data-security",
-            "description": "Protect your critical assets with data loss prevention, access management, and robust encryption policies.",
+            "description": "Ironclad protection for your intellectual property. We implement content-aware DLP and granular access controls to prevent exfiltration.",
             "icon": "Lock",
             "details": [
-                "Data classification and flow diagrams",
-                "Identify controls to secure company's assets",
-                "Data Loss Prevention (DLP) to prevent unauthorized data transfers",
-                "Access Management solutions",
-                "Data Encryption Policies",
-                "Email and Internet Security"
+                "Data Classification & Taxonomy",
+                "Endpoint & Network DLP",
+                "Insider Threat Detection",
+                "CASB (Cloud Access Security Broker) Integration",
+                "Encryption Key Lifecycle Management"
             ]
         },
         {
             "id": "grc",
-            "title": "Governance Risk and Compliance (GRC)",
+            "title": "Integrated GRC",
             "slug": "governance-risk-compliance",
-            "description": "Comprehensive risk management and compliance services including ISO certification consulting and regulatory guidance.",
+            "description": "Streamlining the chaos of compliance. We unify risk management, policy enforcement, and audit readiness into a single cohesive function.",
             "icon": "Scale",
             "details": [
-                "Risk management - Assess, accept, transfer, remediate",
-                "ISO certification consulting",
-                "Guidance for SOC 1&2 attestation and audits",
-                "Compliance review with industry standards (ISO, NIST, PCI DSS, GDPR)",
-                "Cyber Security governance frameworks",
-                "Supply Chain and Third Party Risk Assessments",
-                "Tailored Awareness Programs and Simulations"
+                "Automated Compliance Monitoring",
+                "Vendor Risk Scoring",
+                "Policy & Procedure Development",
+                "Internal Audit Preparation",
+                "Security Awareness Training Simulations"
             ]
         },
         {
             "id": "soc",
-            "title": "Managed Security Operations Center (SOC)",
+            "title": "Autonomous SOC & Threat Hunting",
             "slug": "managed-soc",
-            "description": "A 24×7 next-generation SOC combining AI, ML, and advanced analytics to detect, analyze, and respond to cybersecurity threats in real time.",
+            "description": "24/7 hyper-vigilance. Our SOC combines heuristic behavioral analysis with automated SOAR playbooks to neutralize threats in milliseconds.",
             "icon": "MonitorPlay",
             "details": [
-                "Next gen Security Operations Center",
-                "ML and AI on Big/Fast data architecture",
-                "Unified threat detection and remediation",
-                "Incident and Crisis Response",
-                "Integrated solution for compliance and use cases",
-                "Flexible billing by devices, not EPS",
-                "24x7x365 SLA for best-in-class service"
+                "24x7x365 Eyes-on-Glass Monitoring",
+                "Proactive Threat Hunting",
+                "SIEM Engineering & Tuning",
+                "Automated Incident Response (SOAR)",
+                "Forensic Artifact Analysis",
+                "Dark Web Intelligence Feeds"
             ]
         },
         {
             "id": "vapt",
-            "title": "Vulnerability Assessment (VAPT)",
+            "title": "Offensive Security (Red Teaming)",
             "slug": "vulnerability-assessment-penetration-testing",
-            "description": "Identify and remediate vulnerabilities with expert penetration testing, red team assessments, and breach simulations.",
+            "description": "We hack you before they do. Comprehensive penetration testing and adversarial simulation to expose blind spots in your defense.",
             "icon": "Scan",
             "details": [
-                "Cert-in empaneled experts",
-                "On demand vulnerability scanning",
-                "Remediation guidance for vulnerabilities",
-                "End to end management of vulnerability management programs",
-                "Red Team Assessments",
-                "Breach and Attack Simulations",
-                "Compliance-Driven Testing services",
-                "Mobile App, API, AI, CI/CD Assessments",
-                "Actionable insights for security defenses"
+                "Advanced Penetration Testing (Network/App/Cloud)",
+                "Red Team Operations",
+                "Social Engineering Simulations",
+                "API Logic Abuse Testing",
+                "Ransomware Resilience Assessment"
             ]
         },
         {
             "id": "cyber-warriors",
-            "title": "Cyber Warriors on Premises",
+            "title": "Tactical Staff Augmentation",
             "slug": "cyber-warriors-on-premises",
-            "description": "Augment your team with trained cybersecurity experts for on-site support, threat monitoring, and specialized solutions.",
+            "description": "Deploy specialized cyber operatives to your location. Bridge the skills gap with experts trained in incident handling and infrastructure hardening.",
             "icon": "Users",
             "details": [
-                "Trained cyber security resources to augment teams",
-                "Broad spectrum of services with multiple skill sets",
-                "On demand On-Site Support",
-                "Threat Monitoring & Dark Web Monitoring Experts",
-                "Customized cybersecurity solutions",
-                "Skill Enhancement Programs for team development"
+                "Embedded Security Architects",
+                "Interim CISO / BISO Placement",
+                "Incident Response Commanders",
+                "Security Engineering Squads",
+                "Skill Transfer & Team Upskilling"
             ]
         }
     ]
@@ -355,35 +343,35 @@ export const socials = {
 
 export const terms = {
     "metadata": {
-        "title": "Terms of Service - Cynalitx",
-        "description": "Terms of Service for Cynalitx"
+        "title": "Terms of Engagement - Cyberlix",
+        "description": "Service Agreement"
     },
-    "backLinkLabel": "Back to Home Page",
-    "heading": "Terms of Service",
-    "lastUpdated": "Last updated: December 12, 2025",
+    "backLinkLabel": "Return to Base",
+    "heading": "Terms of Engagement",
+    "lastUpdated": "Last Update: 2025-12-16",
     "sections": [
         {
-            "heading": "1. Agreement to Terms",
+            "heading": "1. Contractual Binding",
             "body": [
-                "These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (\"you\") and Cynalitx (\"we,\" \"us\" or \"our\"), concerning your access to and use of our website and services."
+                "Accessing Cyberlix infrastructure constitutes agreement to these terms. We operate with strict adherence to agreed-upon ROE (Rules of Engagement)."
             ]
         },
         {
-            "heading": "2. Intellectual Property Rights",
+            "heading": "2. Intellectual Assets",
             "body": [
-                "Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the \"Content\") and the trademarks, service marks, and logos contained therein (the \"Marks\") are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws."
+                "All proprietary methodologies, threat intelligence signatures, and strategic frameworks provided remain the intellectual property of Cyberlix."
             ]
         },
         {
-            "heading": "3. User Representations",
+            "heading": "3. Operational Liability",
             "body": [
-                "By using the Site, you represent and warrant that: (1) all registration information you submit will be true, accurate, current, and complete; (2) you will maintain the accuracy of such information and promptly update such registration information as necessary."
+                "While we employ state-of-the-art defense mechanisms, the client acknowledges the evolving nature of cyber warfare. Our liability is limited to the terms specified in the Master Services Agreement (MSA)."
             ]
         },
         {
-            "heading": "4. Contact Us",
+            "heading": "4. Communications",
             "body": [
-                "If you have questions or comments about these terms, you may email us at support@cynalitx.com."
+                "For legal correspondence: legal@cyberlix.com."
             ]
         }
     ]

@@ -17,35 +17,35 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Cynalitx",
-    template: "%s | Cynalitx",
+    default: "Cyberlix",
+    template: "%s | Cyberlix",
   },
   description:
-    "Cynalitx partners with life sciences teams to design, build, and scale software that accelerates transformative healthcare solutions.",
-  metadataBase: new URL("https://cynalitx.com"),
+    "Cyberlix partners with life sciences teams to design, build, and scale software that accelerates transformative healthcare solutions.",
+  metadataBase: new URL("https://cyberlix.com"),
   openGraph: {
-    title: "Cynalitx",
+    title: "Cyberlix",
     description:
-      "Partner with Cynalitx to modernize your life sciences product with high-velocity design, engineering, and regulatory craftsmanship.",
-    url: "https://cynalitx.com",
-    siteName: "Cynalitx",
+      "Partner with Cyberlix to modernize your life sciences product with high-velocity design, engineering, and regulatory craftsmanship.",
+    url: "https://cyberlix.com",
+    siteName: "Cyberlix",
     images: [
       {
-        url: "https://cynalitx.dodon.in/og-image.png",
+        url: "https://cyberlix.dodon.in/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cynalitx logo and modern healthcare interface",
+        alt: "Cyberlix logo and modern healthcare interface",
       },
     ],
-    locale: "en-US",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cynalitx",
+    title: "Cyberlix",
     description:
-      "Design and ship software for life sciences with Cynalitx—product partners for human-centered, compliant healthcare experiences.",
-    creator: "@CynalitxLab",
+      "Design and ship software for life sciences with Cyberlix—product partners for human-centered, compliant healthcare experiences.",
+    creator: "@CyberlixLab",
   },
   robots: {
     index: true,

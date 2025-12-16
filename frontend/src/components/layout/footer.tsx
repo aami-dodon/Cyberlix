@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CynalitxLogo } from "@/components/ui/logo";
+import { CyberlixLogo } from "@/components/ui/logo";
 import { ArrowRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
@@ -33,8 +33,8 @@ export function Footer() {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <CynalitxLogo className="h-6 w-6" />
-              <p className="text-lg font-semibold text-foreground">Cynalitx</p>
+              <CyberlixLogo className="h-6 w-6" />
+              <p className="text-lg font-semibold text-foreground">Cyberlix</p>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               We build resilient platforms and teams that keep mission critical systems calm, clear, and trusted.
@@ -122,7 +122,7 @@ export function Footer() {
       {/* Footer Bottom */}
       <div className="border-t border-border px-6 py-4 text-xs text-muted-foreground">
         <div className="layout-container flex flex-wrap items-center justify-between gap-3">
-          <span>© {year} Cynalitx. All rights reserved.</span>
+          <span>© {year} Cyberlix. All rights reserved.</span>
           <div className="flex gap-4">
             {legalLinks.map((link) => (
               <Link

@@ -37,7 +37,7 @@ export default async function InsightsPage() {
             {/* Hero Section */}
             <section className="layout-container mb-12 text-center">
                 <h1 className="text-4xl font-bold tracking-tight mb-4 sm:text-5xl">
-                    Cynalitx Insights
+                    Cyberlix Insights
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                     Expert analysis, industry trends, and cybersecurity best practices to
