@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     nocache: false,
   },
   icons: {
-    icon: "/icon.svg",
+    icon: "/icon.png",
   },
 };
 
