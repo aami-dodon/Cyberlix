@@ -75,7 +75,6 @@ export function Footer() {
             if (!email) return;
 
             const button = form.querySelector("button") as HTMLButtonElement;
-            const originalIcon = button.innerHTML;
             button.disabled = true;
             // optional: add loading spinner here or just opacity
 

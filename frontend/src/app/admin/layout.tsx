@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { logout } from '@/app/actions/auth'
 import Link from 'next/link'
-import { LayoutDashboard, FileText, LogOut } from 'lucide-react'
+import { LayoutDashboard, LogOut } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 

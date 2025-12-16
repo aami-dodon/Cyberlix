@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { createPost, updatePost } from '@/app/actions/posts'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -46,7 +45,6 @@ const CATEGORIES = [
 ]
 
 export default function PostForm({ post }: PostFormProps) {
-    const router = useRouter()
     const isEditing = !!post
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [date, setDate] = useState<Date | undefined>(
