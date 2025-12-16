@@ -8,9 +8,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build artifacts
+.yarn
 dist/
 build/
 .next/
+.next-dev
 out/
 coverage/
 
@@ -26,5 +28,6 @@ coverage/
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
 
 
