@@ -21,20 +21,20 @@ export const metadata: Metadata = {
     template: "%s | Cyberlix",
   },
   description:
-    "Cyberlix partners with life sciences teams to design, build, and scale software that accelerates transformative healthcare solutions.",
+    "Cyberlix fuses advanced AI threat detection with battle-tested human intellect to secure your most critical digital assets against tomorrow's adversaries.",
   metadataBase: new URL("https://cyberlix.com"),
   openGraph: {
     title: "Cyberlix",
     description:
-      "Partner with Cyberlix to modernize your life sciences product with high-velocity design, engineering, and regulatory craftsmanship.",
+      "Intelligence-Led Security for the Quantum Era. We provide elite defense mechanisms and strategic intelligence.",
     url: "https://cyberlix.com",
     siteName: "Cyberlix",
     images: [
       {
-        url: "https://cyberlix.dodon.in/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cyberlix logo and modern healthcare interface",
+        alt: "Cyberlix - Next-Generation Cyber Defense",
       },
     ],
     locale: "en_US",
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cyberlix",
     description:
-      "Design and ship software for life sciences with Cyberlix—product partners for human-centered, compliant healthcare experiences.",
-    creator: "@CyberlixLab",
+      "Cyberlix fuses advanced AI threat detection with battle-tested human intellect to secure your most critical digital assets.",
+    creator: "@CyberlixSecurity",
   },
   robots: {
     index: true,
