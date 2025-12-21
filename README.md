@@ -1,6 +1,6 @@
 # Cyberlix - Next-Gen Cybersecurity Platform
 
-![Cyberlix Banner](/frontend/public/images/og-image.png)
+![Cyberlix screenshot](assets/cyberlix-screenshot.png)
 
 ## 🛡️ Mission Protocol
 
